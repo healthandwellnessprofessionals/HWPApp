@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+  <div class="sidenav">
+    <a href="index.html">Home</a>
+    <button class="dropdown-btn">Events</button>
+  <div class="dropdown-container">
+    <a href="calendar.html">Calendar</a>
+    <a href="create_event.html">Create Event</a>
+    <a href="event_list.html">View Events</a>
+  </div>
+  <button class="dropdown-btn">Technician</button>
+<div class="dropdown-container">
+  <a href="technician.html">View Technicians</a>
+  <a href="map.html">Technician Map</a>
+</div>
+  </div>
+  <div class="main">
+  </div>
+<div class="mainbody">
+<h1>Technician Map</h1>
+<div id='map' style=;>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibXN0ZWVsZTQxIiwiYSI6ImNqcXB6YjA2czA2ejUzd3BlN2puMmxlaWsifQ.681YjYdXM8j0cx0L9Wl3fA';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/msteele41/cjqwd02rt540q2qmx337ezvcd'
+});
+
+// add markers to map
+geojson.feature.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});
+
+</script>
+
+
+
+
+
+</div>
+</body>
+</html>
