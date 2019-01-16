@@ -1,0 +1,16 @@
+type: 'FeatureCollection',
+features: [{
+  type: 'Feature',
+  geometry: {
+    type: 'Point',
+    coordinates: [
+      -86.600956,
+      33.494543
+    ]
+  },
+  properties: {
+    title: 'Coleman, Ruth L',
+    description: '268 Foster Rd, Leeds, Alabama. PhoneL: 205-266-8709
+'
+  }
+},

@@ -6,6 +6,9 @@
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
 </head>
+<style>
+
+</style>
 <body>
   <div class="sidenav">
     <a href="index.html">Home</a>
@@ -25,27 +28,39 @@
   </div>
 <div class="mainbody">
 <h1>Technician Map</h1>
+<br>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
 <div id='map' style=;>
 
 <script>
+//Placing Map on the page
 mapboxgl.accessToken = 'pk.eyJ1IjoibXN0ZWVsZTQxIiwiYSI6ImNqcXB6YjA2czA2ejUzd3BlN2puMmxlaWsifQ.681YjYdXM8j0cx0L9Wl3fA';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/msteele41/cjqwd02rt540q2qmx337ezvcd'
+    style: 'mapbox://styles/msteele41/cjqzlrevr26jl2sqh93q5zz5u'
 });
 
-// add markers to map
-geojson.feature.forEach(function(marker) {
+map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['employee-address'] // replace this with the name of the layer
+  });
 
-  // create a HTML element for each feature
-  var el = document.createElement('div');
-  el.className = 'marker';
+  if (!features.length) {
+    return;
+  }
 
-  // make a marker for each feature and add to the map
-  new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.Name + '</h3><p>' + feature.properties.Phone + '</p><p>' + feature.properties.Email + '</p>' )
+    .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
 
 </script>
 

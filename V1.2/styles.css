@@ -5,7 +5,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #77BBEC;
+  background-color: #525355;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -38,15 +38,8 @@ body{
 }
 #map {
   position:absolute;
-  padding-top: 20px;
-  height: 400px;
+  top: auto;
+  bottom: auto;
+  height: 430px;
   width:900px;
-}
-.marker {
-  background-image: url('mapbox-icon.png');
-  background-size: cover;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  cursor: pointer;
 }
