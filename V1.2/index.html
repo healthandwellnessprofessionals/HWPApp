@@ -7,21 +7,25 @@
 
 
 <body>
-  <div class="sidenav">
+  <div class="navbar">
     <a href="index.html">Home</a>
-    <button class="dropdown-btn">Events</button>
-  <div class="dropdown-container">
-    <a href="calendar.html">Calendar</a>
-    <a href="create_event.html">Create Event</a>
-    <a href="event_list.html">View Events</a>
-  </div>
-  <button class="dropdown-btn">Technician</button>
-<div class="dropdown-container">
-  <a href="technician.html">View Technicians</a>
-  <a href="map.html">Technician Map</a>
-</div>
-  </div>
-  <div class="main">
+    <div class="dropdown">
+      <button class="dropbtn">Event</button>
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="calendar.html">Calendar</a>
+        <a href="event_list.html">View Events</a>
+        <a href="create_event.html">Create Event</a>
+      </div>
+      </div>
+      <div class="dropdown">
+      <button class="dropbtn">Technician</button>
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="technician.html">View Technicians</a>
+        <a href="map.html">View Technician Map</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>

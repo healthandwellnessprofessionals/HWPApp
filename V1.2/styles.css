@@ -1,45 +1,87 @@
-.sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #525355;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-.sidenav a, .dropdown-btn {
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #2F316D;
   font-family: Helvetica;
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
   font-size: 20px;
-  color: #818181;
-  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 20px;
   border: none;
-  background: none;
-  width:100%;
-  text-align: left;
-  cursor: pointer;
   outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: Helvetica; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
 }
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: DARKRED;
 }
-.dropdown-container {
-  padding-left: 10px;
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 body{
-  margin-left: 200px;
+
 }
 .mainbody{
-  margin-left: 200px;
+  text-align: center;
   font-family: Helvetica;
+  font-weight: bolder;
 }
 #map {
-  position:sticky;
+  position:absolute;
   top: auto;
   bottom: auto;
-  height: 430px;
+  height: 500px;
   width:900px;
+  margin-left: 300px;
 }

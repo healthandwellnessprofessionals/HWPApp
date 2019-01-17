@@ -5,34 +5,40 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
 </head>
 <style>
 
 </style>
 <body>
-  <div class="sidenav">
+  <!--Main Menu-->
+  <div class="navbar">
     <a href="index.html">Home</a>
-    <button class="dropdown-btn">Events</button>
-  <div class="dropdown-container">
-    <a href="calendar.html">Calendar</a>
-    <a href="create_event.html">Create Event</a>
-    <a href="event_list.html">View Events</a>
-  </div>
-  <button class="dropdown-btn">Technician</button>
-<div class="dropdown-container">
-  <a href="technician.html">View Technicians</a>
-  <a href="map.html">Technician Map</a>
-</div>
-  </div>
-  <div class="main">
+    <div class="dropdown">
+      <button class="dropbtn">Event</button>
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="calendar.html">Calendar</a>
+        <a href="event_list.html">View Events</a>
+        <a href="create_event.html">Create Event</a>
+      </div>
+      </div>
+      <div class="dropdown">
+      <button class="dropbtn">Technician</button>
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="technician.html">View Technicians</a>
+        <a href="map.html">View Technician Map</a>
+      </div>
+    </div>
   </div>
 <div class="mainbody">
 <h1>Technician Map</h1>
-<br>
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
-<div id='map' style=;>
+</div>
 
+<!-- Map -->
+<div id='map' style=;>
 <script>
 //Placing Map on the page
 mapboxgl.accessToken = 'pk.eyJ1IjoibXN0ZWVsZTQxIiwiYSI6ImNqcXB6YjA2czA2ejUzd3BlN2puMmxlaWsifQ.681YjYdXM8j0cx0L9Wl3fA';
@@ -40,24 +46,24 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/msteele41/cjqzlrevr26jl2sqh93q5zz5u'
 });
-
+//Marker Layer
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['employee-address'] // replace this with the name of the layer
+    layers: ['employee-address']
   });
 
   if (!features.length) {
     return;
   }
-
   var feature = features[0];
-
+  //Popup Information
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.Name + '</h3><p>' + feature.properties.Phone + '</p><p>' + feature.properties.Email + '</p>' )
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
+//Search Bar
 map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
 }));
