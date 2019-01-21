@@ -3,9 +3,17 @@
 <head>
 <title></title>
 <link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+/*Create Event Form*/
+.FormHead{
+  font-family: Helvetica;
+}
+input[name="grpname"]{
+  width: 100%;
+}
+}
+</style>
 </head>
-
-
 <body>
   <div class="navbar">
     <a href="index.html">Home</a>
@@ -27,5 +35,33 @@
       </div>
     </div>
   </div>
+<form action="event_creation.php">
+  <div class="FormHead">
+    <h1>Create an Event</h1>
+  </div>
+  <div class="BasicInfo">
+    <label for="grpname"><b>Group Name</b></label>
+    <input type="text" placeholder="Group Name" name="grpname" required>
+
+    <label for="evtname"><b>Event Name</b></label>
+    <input type="text" placeholder="Event Name" name="evtname" required>
+
+    <label for="date"><b>Event Date</b></label>
+    <input type="date" placeholder="" name="date" required>
+
+    <label for="settm"><b>Setup Time</b></label>
+    <input type="time" placeholder="" name="settm" required>
+
+    <label for="strttm"><b>Start Time</b></label>
+    <input type="time" placeholder="" name="strttm" required>
+
+    <label for="endtm"><b>End Time</b></label>
+    <input type="time" placeholder="" name="endtm" required>
+
+    <label for="address"><b>Address</b></label>
+    <input type="address" placeholder="" name="address" required>
+  </div>
+
+</form>
 </body>
 </html>

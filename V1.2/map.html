@@ -62,11 +62,13 @@ map.on('click', function(e) {
     .setHTML('<h3>' + feature.properties.Name + '</h3><p>' + feature.properties.Phone + '</p><p>' + feature.properties.Email + '</p>' )
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
-});
+    });
+
 //Search Bar
 map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
 }));
+
 
 
 </script>

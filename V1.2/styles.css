@@ -81,7 +81,9 @@ body{
   position:absolute;
   top: auto;
   bottom: auto;
+  margin-left: : 25%;
+  padding-left: 25%;
   height: 500px;
-  width:900px;
-  margin-left: 300px;
+  width:50%;
+
 }
