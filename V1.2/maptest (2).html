@@ -44,37 +44,46 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibXN0ZWVsZTQxIiwiYSI6ImNqcXB6YjA2czA2ejUzd3BlN2puMmxlaWsifQ.681YjYdXM8j0cx0L9Wl3fA';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/msteele41/cjqzlrevr26jl2sqh93q5zz5u'
+    style: 'mapbox://styles/msteele41/cjqwd02rt540q2qmx337ezvcd'
+
 });
 //Marker Layer
-map.on('click', function(e) {
-  var features = map.queryRenderedFeatures(e.point, {
-    layers: ['employee-address']
+map.on('load', function(e) {
+  // Add the data to your map as a layer
+  map.addLayer({
+    id: 'locations',
+    type: 'symbol',
+    // Add a GeoJSON source containing place coordinates and information.
+    source: {
+      type: 'geojson',
+      data: 'Markers.geojson'
+    },
+    layout: {
+      'icon-image': 'marker-15',
+      'icon-allow-overlap': true,
+    }
   });
+});
 
-  if (!features.length) {
-    return;
-  }
-  var feature = features[0];
-  //Popup Information
-  var popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.Name + '</h3><p>' + feature.properties.Phone + '</p><p>' + feature.properties.Email + '</p>' )
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
-    });
-$.getJSON("Markers.geojson",function(data){
-
-
-
-
-})
 //Search Bar
-map.addControl(new MapboxGeocoder({
+var geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
-}));
+});
+map.addControl(geocoder);
 
+map.on('load', updateGeocoderProximity); // set proximity on map load
+map.on('moveend', updateGeocoderProximity); // and then update proximity each time the map moves
 
+function updateGeocoderProximity() {
+    // proximity is designed for local scale, if the user is looking at the whole world,
+    // it doesn't make sense to factor in the arbitrary centre of the map
+    if (map.getZoom() > 9) {
+        var center = map.getCenter().wrap(); // ensures the longitude falls within -180 to 180 as the Geocoding API doesn't accept values outside this range
+        geocoder.setProximity({ longitude: center.lng, latitude: center.lat });
+    } else {
+        geocoder.setProximity(null);
+    }
+}
 
 </script>
 
