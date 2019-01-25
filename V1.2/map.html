@@ -63,12 +63,8 @@ map.on('click', function(e) {
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
     });
-$.getJSON("Markers.geojson",function(data){
 
 
-
-
-})
 //Search Bar
 map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken

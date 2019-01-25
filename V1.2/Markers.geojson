@@ -6003,3 +6003,23 @@ var stores: {
   }
 ]
 }
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -77.043959498405,
+      38.903883387232
+    ]
+  },
+  "properties": {
+    "phoneFormatted": "(202) 331-3355",
+    "phone": "2023313355",
+    "address": "1901 L St. NW",
+    "city": "Washington DC",
+    "country": "United States",
+    "crossStreet": "at 19th St",
+    "postalCode": "20036",
+    "state": "D.C."
+  }
+}
