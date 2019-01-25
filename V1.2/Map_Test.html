@@ -18769,9 +18769,9 @@ map.addLayer({
   type: 'circle',
   paint: {
     'circle-radius': 10,
-    'circle-color': '#007cbf',
+    'circle-color': '#fc0000',
     'circle-stroke-width': 3,
-    'circle-stroke-color': '#fff'
+    'circle-stroke-color': '#000000'
   }
 });
 
@@ -18861,11 +18861,15 @@ function buildLocationList(data) {
     details.innerHTML = prop.Email;
     if (prop.Phone) {
       details.innerHTML += ' · ' + prop.Phone;
-    }}};
+    }
+    if (prop.distance) {
+    var roundedDistance = Math.round(prop.distance * 100) / 100;
+    details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>';
+  }}};
     function flyToStore(currentFeature) {
       map.flyTo({
         center: currentFeature.geometry.coordinates,
-        zoom: 8
+
       });
     }
     function createPopUp(currentFeature) {
