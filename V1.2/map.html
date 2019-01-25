@@ -49,7 +49,7 @@ var map = new mapboxgl.Map({
 //Marker Layer
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['employee-address']
+    layers: ['employee-address-20190125']
   });
 
   if (!features.length) {
