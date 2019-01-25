@@ -18880,7 +18880,7 @@ function buildLocationList(data) {
       var popup = new mapboxgl.Popup({ closeOnClick: false })
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML('<h3>Technician</h3>' +
-          '<h4>' + currentFeature.properties.Name + '</h4>')
+          '<h4>' + currentFeature.properties.Name + '</h4>' + '<br><h4>' + currentFeature.properties.Email + '</h4>' + '<br><h4>' + currentFeature.properties.Phone + '</h4>')
         .addTo(map);
     };
     // Add an event listener for when a user clicks on the map
