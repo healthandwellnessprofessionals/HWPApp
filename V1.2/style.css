@@ -76,17 +76,17 @@ a:hover {
 
 .listings .item .title {
   display: block;
-  color: #00853e;
+  color: #000d85;
   font-weight: 700;
 }
 
 .listings .item .title small { font-weight: 400; }
 
 .listings .item.active .title,
-.listings .item .title:hover { color: #8cc63f; }
+.listings .item .title:hover { color: #850000; }
 
 .listings .item.active {
-  background-color: #f8f8f8;
+  background-color: #850000;
 }
 
 ::-webkit-scrollbar {
@@ -121,8 +121,9 @@ a:hover {
 
 .mapboxgl-popup-content {
   font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-  padding: 0;
-  width: 180px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
 }
 
 .mapboxgl-popup-content-wrapper {
@@ -130,11 +131,11 @@ a:hover {
 }
 
 .mapboxgl-popup-content h3 {
-  background: #91c949;
+  background: #0456a3;
   color: #fff;
   margin: 0;
   display: block;
-  padding: 10px;
+  padding: auto;
   border-radius: 3px 3px 0 0;
   font-weight: 700;
   margin-top: -15px;
@@ -143,7 +144,7 @@ a:hover {
 .mapboxgl-popup-content h4 {
   margin: 0;
   display: block;
-  padding: 10px;
+  padding: auto;
   font-weight: 400;
 }
 
