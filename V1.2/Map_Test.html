@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />+
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
 <!-- Geocoder plugin -->
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
 
 <!-- Turf.js plugin -->
 <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
@@ -46,7 +47,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mark Gleason",
-    "Home Address":"1412 Glendale Ave NE",
+    "Address":"1412 Glendale Ave NE",
     "Email":"mgleason2@cfl.rr.com",
     "Phone":"(321) 537-8674"
     }
@@ -59,7 +60,7 @@ var stores = {
     },
     "properties": {
     "Name":"Permecia Dixon",
-    "Home Address":"705 Lyon CT SW",
+    "Address":"705 Lyon CT SW",
     "Email":"permeciaw@gmail.com",
     "Phone":"(404) 964-5034"
     }
@@ -72,7 +73,7 @@ var stores = {
     },
     "properties": {
     "Name":"Carmen Marchione",
-    "Home Address":"6353 NW 40th Ave",
+    "Address":"6353 NW 40th Ave",
     "Email":"carmenjr@hotmail.com",
     "Phone":"(954) 448-0548"
     }
@@ -85,7 +86,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lenora Rowley",
-    "Home Address":"335 Tinkham ct",
+    "Address":"335 Tinkham ct",
     "Email":"nonierowley3@yahoo.com",
     "Phone":"(909) 973-1352"
     }
@@ -98,7 +99,7 @@ var stores = {
     },
     "properties": {
     "Name":"Brian Dunbaugh",
-    "Home Address":"dunbaugh@gmail.com",
+    "Address":"dunbaugh@gmail.com",
     "Email":"dunbaugh@gmail.com",
     "Phone":"(864) 325-2435"
     }
@@ -111,7 +112,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jane Hilton",
-    "Home Address":"7235 Fortman Ter",
+    "Address":"7235 Fortman Ter",
     "Email":"jehilty@msn.com",
     "Phone":"(719) 339-3229"
     }
@@ -124,7 +125,7 @@ var stores = {
     },
     "properties": {
     "Name":"Natalia Kemp",
-    "Home Address":"301 Cabrillo Dr",
+    "Address":"301 Cabrillo Dr",
     "Email":"nvfrech@hotmail.com",
     "Phone":"(432) 214-3209"
     }
@@ -137,7 +138,7 @@ var stores = {
     },
     "properties": {
     "Name":"Joel Hazlett",
-    "Home Address":"2424 Queensway Rd",
+    "Address":"2424 Queensway Rd",
     "Email":"JoelAHazlett@icloud.com",
     "Phone":"(407) 408-4510"
     }
@@ -150,7 +151,7 @@ var stores = {
     },
     "properties": {
     "Name":"Irma Reyes",
-    "Home Address":"102 S 26th St",
+    "Address":"102 S 26th St",
     "Email":"irmareyes2975@yahoo.com",
     "Phone":"(1956) 622-8846"
     }
@@ -163,7 +164,7 @@ var stores = {
     },
     "properties": {
     "Name":"Robert Krebs",
-    "Home Address":"265 nw 119 lane",
+    "Address":"265 nw 119 lane",
     "Email":"rwkrebs@att.net",
     "Phone":"(954) 650-0587"
     }
@@ -176,7 +177,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tyler Johnson",
-    "Home Address":"4042 sw 1st ST.",
+    "Address":"4042 sw 1st ST.",
     "Email":"ty.johnson91@gmail.com",
     "Phone":"(954) 798-5425"
     }
@@ -189,7 +190,7 @@ var stores = {
     },
     "properties": {
     "Name":"Shelia Rice DeLoach",
-    "Home Address":"13234 Joeandy Rd, N",
+    "Address":"13234 Joeandy Rd, N",
     "Email":"toothru@hotmail.com",
     "Phone":"(904) 234-1193"
     }
@@ -202,7 +203,7 @@ var stores = {
     },
     "properties": {
     "Name":"Stephen Ellis",
-    "Home Address":"8510 Barasinga Trl",
+    "Address":"8510 Barasinga Trl",
     "Email":"sjellis23@gmail.com",
     "Phone":"(512) 484-2296"
     }
@@ -215,7 +216,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mark Snow",
-    "Home Address":"2900 Pinewwod Run",
+    "Address":"2900 Pinewwod Run",
     "Email":"snoze2000@hotmail.com",
     "Phone":"(727) 593-4303"
     }
@@ -228,7 +229,7 @@ var stores = {
     },
     "properties": {
     "Name":"KATHLEEN PEARCE",
-    "Home Address":"W6580 COUNTY ROAD V",
+    "Address":"W6580 COUNTY ROAD V",
     "Email":"kpear2002@yahoo.com",
     "Phone":"(920) 946-1036"
     }
@@ -241,7 +242,7 @@ var stores = {
     },
     "properties": {
     "Name":"Joshua Rivas",
-    "Home Address":"752 villarreal",
+    "Address":"752 villarreal",
     "Email":"jrealist61@gmail.com",
     "Phone":"(361) 597-7501"
     }
@@ -254,7 +255,7 @@ var stores = {
     },
     "properties": {
     "Name":"Abbey Jones",
-    "Home Address":"30831 Schlather Ln",
+    "Address":"30831 Schlather Ln",
     "Email":"abbeyelisejones@gmail.com",
     "Phone":"(210) 913-5458"
     }
@@ -267,7 +268,7 @@ var stores = {
     },
     "properties": {
     "Name":"Amanda Cage",
-    "Home Address":"269 Lossie Lane",
+    "Address":"269 Lossie Lane",
     "Email":"amandakcage@gmail.com",
     "Phone":"(404) 447-7628"
     }
@@ -280,7 +281,7 @@ var stores = {
     },
     "properties": {
     "Name":"Michele Marchione",
-    "Home Address":"6353 NW 40th Ave",
+    "Address":"6353 NW 40th Ave",
     "Email":"mmarchione@bellsouth.net",
     "Phone":"(954) 448-0562"
     }
@@ -293,7 +294,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tatiana Gilliam",
-    "Home Address":"911 Biscayne",
+    "Address":"911 Biscayne",
     "Email":"jtgilliam@gmail.com",
     "Phone":"(512) 791-8294"
     }
@@ -306,7 +307,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lisa Buxton",
-    "Home Address":"3408 46TH ST",
+    "Address":"3408 46TH ST",
     "Email":"LMC040967@GMAIL.COM",
     "Phone":"(504) 240-8334"
     }
@@ -319,7 +320,7 @@ var stores = {
     },
     "properties": {
     "Name":"Debra Walters",
-    "Home Address":"18316 Derbes Dr",
+    "Address":"18316 Derbes Dr",
     "Email":"medcollectemtp@yahoo.com",
     "Phone":"(504) 428-1093"
     }
@@ -332,7 +333,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ronald Hopper",
-    "Home Address":"944 W 2nd St",
+    "Address":"944 W 2nd St",
     "Email":"baronsnest@frontier.com",
     "Phone":"(1812) 599-0770"
     }
@@ -345,7 +346,7 @@ var stores = {
     },
     "properties": {
     "Name":"Amy Bhandari",
-    "Home Address":"5151 Eau Claire Ct",
+    "Address":"5151 Eau Claire Ct",
     "Email":"amyglimane@yahoo.com",
     "Phone":"(1773) 547-2464"
     }
@@ -358,7 +359,7 @@ var stores = {
     },
     "properties": {
     "Name":"Emily Mahavong",
-    "Home Address":"6306 Voyagers Pl ",
+    "Address":"6306 Voyagers Pl ",
     "Email":"emahavong@yahoo.com",
     "Phone":"(316) 371-3007"
     }
@@ -371,7 +372,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ashley Montemayor",
-    "Home Address":"1732 Treyway Ln Apt C",
+    "Address":"1732 Treyway Ln Apt C",
     "Email":"amontemayor30@yahoo.com",
     "Phone":"(361) 775-8629"
     }
@@ -384,7 +385,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nora jones",
-    "Home Address":"119  Ashberry  dr",
+    "Address":"119  Ashberry  dr",
     "Email":"caldwell75rebe48@yahoo.com",
     "Phone":"(502) 510-0100"
     }
@@ -397,7 +398,7 @@ var stores = {
     },
     "properties": {
     "Name":"Anthony Noce",
-    "Home Address":"102 Thomas shaun Ct",
+    "Address":"102 Thomas shaun Ct",
     "Email":"anthony.noce07@yahoo.com",
     "Phone":"(270) 401-8049"
     }
@@ -410,7 +411,7 @@ var stores = {
     },
     "properties": {
     "Name":"ricquia Ross",
-    "Home Address":"1912 Suzanne Lane",
+    "Address":"1912 Suzanne Lane",
     "Email":"ricquiaross@gmail.com",
     "Phone":"(863) 220-4039"
     }
@@ -423,7 +424,7 @@ var stores = {
     },
     "properties": {
     "Name":"JOANNE HAZLETT",
-    "Home Address":"2424 QUEENSWAY ROAD",
+    "Address":"2424 QUEENSWAY ROAD",
     "Email":"joannedhazlett@icloud.com",
     "Phone":"(407) 484-0199"
     }
@@ -436,7 +437,7 @@ var stores = {
     },
     "properties": {
     "Name":"Eduardo Montserrat",
-    "Home Address":"7113 SW 165th AV .Miami FL. 33193",
+    "Address":"7113 SW 165th AV .Miami FL. 33193",
     "Email":"emontserrat@hotmail.com",
     "Phone":"(786) 489-8110"
     }
@@ -449,7 +450,7 @@ var stores = {
     },
     "properties": {
     "Name":"Felipe Montserrat",
-    "Home Address":"7113 SW 165th AVE Miami FL 33193",
+    "Address":"7113 SW 165th AVE Miami FL 33193",
     "Email":"femc.85@gmail.com",
     "Phone":"(786) 554-8465"
     }
@@ -462,7 +463,7 @@ var stores = {
     },
     "properties": {
     "Name":"Yulli Montserrat",
-    "Home Address":"7113 SW 165th AVE Miami FL 33193",
+    "Address":"7113 SW 165th AVE Miami FL 33193",
     "Email":"yulli_montserrat@hotmail.com",
     "Phone":"(786) 271-7908"
     }
@@ -475,7 +476,7 @@ var stores = {
     },
     "properties": {
     "Name":"MARIE ST GERMAIN",
-    "Home Address":"6436 SW 22ND STREET MIRAMAR FL 33023",
+    "Address":"6436 SW 22ND STREET MIRAMAR FL 33023",
     "Email":"msgnurse@hotmai.com",
     "Phone":"(954) 288-9468"
     }
@@ -488,7 +489,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jennifer Neely",
-    "Home Address":"308 SW 13th street fort lauderdale FL 33315",
+    "Address":"308 SW 13th street fort lauderdale FL 33315",
     "Email":"jneely0727@gmail.com",
     "Phone":"(772) 919-5091"
     }
@@ -501,7 +502,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jason Santana",
-    "Home Address":"4331 SW 2 Ct Plantation, Fl 33317",
+    "Address":"4331 SW 2 Ct Plantation, Fl 33317",
     "Email":"jays36@yahoo.com",
     "Phone":"(305) 469-7907"
     }
@@ -514,7 +515,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kelly Barreto-Frie",
-    "Home Address":"9021 NW 25th Street Sunrise FL 33322",
+    "Address":"9021 NW 25th Street Sunrise FL 33322",
     "Email":"kfrie83@gmail.com",
     "Phone":"(305) 815-2770"
     }
@@ -527,7 +528,7 @@ var stores = {
     },
     "properties": {
     "Name":"MONICA WILLIAMS",
-    "Home Address":"5973 NW 54TH LANE, TAMARAC, FL 33319",
+    "Address":"5973 NW 54TH LANE, TAMARAC, FL 33319",
     "Email":"Emon511@hotmail.com",
     "Phone":"(954) 253-0304"
     }
@@ -540,7 +541,7 @@ var stores = {
     },
     "properties": {
     "Name":"Olena Kuzmenko",
-    "Home Address":"3900 Oaks Clubhouse Dr, apt 109, Pompano Beach, Fl 33069 ",
+    "Address":"3900 Oaks Clubhouse Dr, apt 109, Pompano Beach, Fl 33069 ",
     "Email":"k.lena06@gmail.com",
     "Phone":"(786) 357-5918"
     }
@@ -553,7 +554,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sara Tovar",
-    "Home Address":"526 Mar Cir Alamo Texas ",
+    "Address":"526 Mar Cir Alamo Texas ",
     "Email":"saragoya@hotmail.com",
     "Phone":"(302) 463-4390"
     }
@@ -566,7 +567,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nancy Garcia",
-    "Home Address":"3101 Ozuna St. Penitas, TX 78576",
+    "Address":"3101 Ozuna St. Penitas, TX 78576",
     "Email":"nancygarcia1@hotmail.com",
     "Phone":"(956) 379-1474"
     }
@@ -579,7 +580,7 @@ var stores = {
     },
     "properties": {
     "Name":"nil leone",
-    "Home Address":"809 republic ct deerfield beach fl 33442",
+    "Address":"809 republic ct deerfield beach fl 33442",
     "Email":"nile.leone@gmail.com",
     "Phone":"(561) 255-5015"
     }
@@ -592,7 +593,7 @@ var stores = {
     },
     "properties": {
     "Name":"katharine marshall",
-    "Home Address":"757 belmont drive west palm beach fl 33415",
+    "Address":"757 belmont drive west palm beach fl 33415",
     "Email":"kem_30328@yahoo.com",
     "Phone":"(404) 357-5756"
     }
@@ -605,7 +606,7 @@ var stores = {
     },
     "properties": {
     "Name":"Alicia Grugett",
-    "Home Address":"3648 Turtle Island Ct, West Palm Beach, FL 33411",
+    "Address":"3648 Turtle Island Ct, West Palm Beach, FL 33411",
     "Email":"agrugett@hotmail.com",
     "Phone":"(404) 312-9949"
     }
@@ -618,7 +619,7 @@ var stores = {
     },
     "properties": {
     "Name":"Angels Beichley",
-    "Home Address":"738 Bird Bay Circle, Venice, FL 34285",
+    "Address":"738 Bird Bay Circle, Venice, FL 34285",
     "Email":"ambeichley@gmail.com",
     "Phone":"(256) 238-3419"
     }
@@ -631,7 +632,7 @@ var stores = {
     },
     "properties": {
     "Name":"Gabriela Laurel",
-    "Home Address":"13522 Carlos Fifth Ct. Corpus Christi, Tx. 78418",
+    "Address":"13522 Carlos Fifth Ct. Corpus Christi, Tx. 78418",
     "Email":"brie.sapien22@yahoo.com",
     "Phone":"(361) 947-3355"
     }
@@ -644,7 +645,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jennifer Nicholson",
-    "Home Address":"210 20th avenue south St Petersburg Florida 33705",
+    "Address":"210 20th avenue south St Petersburg Florida 33705",
     "Email":"jennifernicholson93@yahoo.com",
     "Phone":"(813) 816-6698"
     }
@@ -657,7 +658,7 @@ var stores = {
     },
     "properties": {
     "Name":"Janice Fewlass",
-    "Home Address":"11202 Spring Point Circle, Riverview, FL 33579",
+    "Address":"11202 Spring Point Circle, Riverview, FL 33579",
     "Email":"janice.fewlass@hotmail.com",
     "Phone":"(937) 238-5694"
     }
@@ -670,7 +671,7 @@ var stores = {
     },
     "properties": {
     "Name":"Gail Gail",
-    "Home Address":"139 Wall St.  Redington Shores, FL. 33708",
+    "Address":"139 Wall St.  Redington Shores, FL. 33708",
     "Email":"gail2x@aol.com",
     "Phone":"(727) 688-8113"
     }
@@ -683,7 +684,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sheri Campos",
-    "Home Address":"10509 Hemlock Rd, Corpus Christi, TX. 78410",
+    "Address":"10509 Hemlock Rd, Corpus Christi, TX. 78410",
     "Email":"shericampos@sbcglobal.net",
     "Phone":"(361) 813-6147"
     }
@@ -696,7 +697,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ryan Pierce",
-    "Home Address":"13237 87th Place N. Seminole FL, 33776",
+    "Address":"13237 87th Place N. Seminole FL, 33776",
     "Email":"ryanpierce28@yahoo.com",
     "Phone":"(305) 731-6592"
     }
@@ -709,7 +710,7 @@ var stores = {
     },
     "properties": {
     "Name":"karen joseph",
-    "Home Address":"4407 Kendal Court Valrico Fl 33596",
+    "Address":"4407 Kendal Court Valrico Fl 33596",
     "Email":"karenjoseph@mac.com",
     "Phone":"(813) 629-4469"
     }
@@ -722,7 +723,7 @@ var stores = {
     },
     "properties": {
     "Name":"Alexis Litchfield",
-    "Home Address":"5221 Bayshore Blvd. Apt 58. Tampa, FL. 33611",
+    "Address":"5221 Bayshore Blvd. Apt 58. Tampa, FL. 33611",
     "Email":"litchfield.alexis@gmail.com",
     "Phone":"(813) 335-9475"
     }
@@ -735,7 +736,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tamara Lanza",
-    "Home Address":"4713 west lawn ave tampa Florida 33611",
+    "Address":"4713 west lawn ave tampa Florida 33611",
     "Email":"tamara_lanza@yahoo.com",
     "Phone":"(813) 599-1131"
     }
@@ -748,7 +749,7 @@ var stores = {
     },
     "properties": {
     "Name":"Audrey Kesner",
-    "Home Address":"13572 Feather Sound Cir W apt 1914",
+    "Address":"13572 Feather Sound Cir W apt 1914",
     "Email":"audreykesner@gmail.com",
     "Phone":"(567) 712-9634"
     }
@@ -761,7 +762,7 @@ var stores = {
     },
     "properties": {
     "Name":"Audrey Kesner",
-    "Home Address":"13572 Feather Sound Cir W apt 1914",
+    "Address":"13572 Feather Sound Cir W apt 1914",
     "Email":"audreykesner@gmail.com",
     "Phone":"(567) 712-9634"
     }
@@ -774,7 +775,7 @@ var stores = {
     },
     "properties": {
     "Name":"Eleanor Levy",
-    "Home Address":"501 East Bay Dr Apt 1103 largo, fl 33770",
+    "Address":"501 East Bay Dr Apt 1103 largo, fl 33770",
     "Email":"ellymaelevy@hotmail.com",
     "Phone":"(727) 686-6386"
     }
@@ -787,7 +788,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ingrid Loesener",
-    "Home Address":"3049 Oakwood Ave SE Palm Bay, Fl. 32909",
+    "Address":"3049 Oakwood Ave SE Palm Bay, Fl. 32909",
     "Email":"ingridloesener@gmail.com",
     "Phone":"(321) 514-2956"
     }
@@ -800,7 +801,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kristi Johnson",
-    "Home Address":"1480 Gulf Blvd. #1008 Clearwater Beach, FL 33767",
+    "Address":"1480 Gulf Blvd. #1008 Clearwater Beach, FL 33767",
     "Email":"kristijrn@Me.com",
     "Phone":"(571) 606-2053"
     }
@@ -813,7 +814,7 @@ var stores = {
     },
     "properties": {
     "Name":"Cortney Nordblom",
-    "Home Address":"2557 Harn Blvd unit 2 Clearwater, FL 33764",
+    "Address":"2557 Harn Blvd unit 2 Clearwater, FL 33764",
     "Email":"cortneyamber85@gmail.com",
     "Phone":"(727) 648-7640"
     }
@@ -826,7 +827,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jimmy Krastz",
-    "Home Address":"4221 W Spruce St #1121 Tampa FL 33607",
+    "Address":"4221 W Spruce St #1121 Tampa FL 33607",
     "Email":"jkrastz@yahoo.com",
     "Phone":"(813) 808-0725"
     }
@@ -839,7 +840,7 @@ var stores = {
     },
     "properties": {
     "Name":"ricquia Ross",
-    "Home Address":"1912 Suzanne Lane Lakeland, FL  33813",
+    "Address":"1912 Suzanne Lane Lakeland, FL  33813",
     "Email":"ricquiaross@gmail.com",
     "Phone":"(863) 220-4039"
     }
@@ -852,7 +853,7 @@ var stores = {
     },
     "properties": {
     "Name":"Chrisanne Rhodes",
-    "Home Address":"197 highland terrace ",
+    "Address":"197 highland terrace ",
     "Email":"chrissyerhodes@yahoo.com",
     "Phone":"(832) 360-6950"
     }
@@ -865,7 +866,7 @@ var stores = {
     },
     "properties": {
     "Name":"Elka Mcardle",
-    "Home Address":"Winter Haven Florida",
+    "Address":"Winter Haven Florida",
     "Email":"elka_j_mc311971@msn.com",
     "Phone":"(813) 957-1207"
     }
@@ -878,7 +879,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kimberly Armitage",
-    "Home Address":"110 12th Ave. S., Safety Harbor, FL 34695",
+    "Address":"110 12th Ave. S., Safety Harbor, FL 34695",
     "Email":"ksa811@yahoo.com",
     "Phone":"(727) 688-5159"
     }
@@ -891,7 +892,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sherri Santos",
-    "Home Address":"1706 W Bedingfield Drive Tampa Fl 33603",
+    "Address":"1706 W Bedingfield Drive Tampa Fl 33603",
     "Email":"sherri33603@yahoo.com",
     "Phone":"(813) 431-3257"
     }
@@ -904,7 +905,7 @@ var stores = {
     },
     "properties": {
     "Name":"Daniel Lopez",
-    "Home Address":"29772 66st n Clearwater fl 33761",
+    "Address":"29772 66st n Clearwater fl 33761",
     "Email":"dlmadrid77@gmail.com",
     "Phone":"(727) 686-9850"
     }
@@ -917,7 +918,7 @@ var stores = {
     },
     "properties": {
     "Name":"Scott Sanborn",
-    "Home Address":"3604 Fairway Forest Dr. Palm Harbor, Fl. 34685",
+    "Address":"3604 Fairway Forest Dr. Palm Harbor, Fl. 34685",
     "Email":"thestripeguy@tampabay.rr.com",
     "Phone":"(954) 695-9518"
     }
@@ -930,7 +931,7 @@ var stores = {
     },
     "properties": {
     "Name":"Rylea Carver",
-    "Home Address":"18413 sterling silver circle lutz Florida 33549",
+    "Address":"18413 sterling silver circle lutz Florida 33549",
     "Email":"ryleafromlutz@gmail.com",
     "Phone":"(813) 406-9745"
     }
@@ -943,7 +944,7 @@ var stores = {
     },
     "properties": {
     "Name":"Denege Carver",
-    "Home Address":"18413 Sterling Silver Cir Lutz, Florida 33549",
+    "Address":"18413 Sterling Silver Cir Lutz, Florida 33549",
     "Email":"negefromlutz@gmail.com",
     "Phone":"(813) 629-5519"
     }
@@ -956,7 +957,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kerri Nuccio",
-    "Home Address":"3684 Tuckerton Dr Land O Lakes 34638",
+    "Address":"3684 Tuckerton Dr Land O Lakes 34638",
     "Email":"knucciorn@gmail.com",
     "Phone":"(502) 599-9278"
     }
@@ -969,7 +970,7 @@ var stores = {
     },
     "properties": {
     "Name":"James Cherry",
-    "Home Address":"23841 Forest View Drive Land O Lakes, Fl. 34639",
+    "Address":"23841 Forest View Drive Land O Lakes, Fl. 34639",
     "Email":"resqman23@yahoo.com",
     "Phone":"(772) 985-3608"
     }
@@ -982,7 +983,7 @@ var stores = {
     },
     "properties": {
     "Name":"Denise Hondros",
-    "Home Address":"1357 Venezia Court Unit 404 Davenport Florida 33896",
+    "Address":"1357 Venezia Court Unit 404 Davenport Florida 33896",
     "Email":"dstrickland1215@yahoo.com",
     "Phone":"(614) 633-5790"
     }
@@ -995,7 +996,7 @@ var stores = {
     },
     "properties": {
     "Name":"Linda Weese",
-    "Home Address":"9909 4th Ave., Orlando, Fl. 32824",
+    "Address":"9909 4th Ave., Orlando, Fl. 32824",
     "Email":"LWeese9951@aol.com",
     "Phone":"(407) 538-1398"
     }
@@ -1008,7 +1009,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mengy Germain",
-    "Home Address":"5144 CITY ST unit 226, orlando, fl 32839",
+    "Address":"5144 CITY ST unit 226, orlando, fl 32839",
     "Email":"mengygermain@gmail.com",
     "Phone":"(407) 501-9076"
     }
@@ -1021,7 +1022,7 @@ var stores = {
     },
     "properties": {
     "Name":"michelle ingram",
-    "Home Address":"3446 bellington drive orlando fl 32835",
+    "Address":"3446 bellington drive orlando fl 32835",
     "Email":"mmichelleingram@gmail.com",
     "Phone":"(561) 313-2101"
     }
@@ -1034,7 +1035,7 @@ var stores = {
     },
     "properties": {
     "Name":"Giselle Curiel",
-    "Home Address":"4097 Clarcona Ocoee Road Orlando, FL",
+    "Address":"4097 Clarcona Ocoee Road Orlando, FL",
     "Email":"giselle-c@hotmail.com",
     "Phone":"(497) 910-3666"
     }
@@ -1047,7 +1048,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jeanette Nation",
-    "Home Address":"1325 Branch Hill Court.  APOPKA, FL 32712",
+    "Address":"1325 Branch Hill Court.  APOPKA, FL 32712",
     "Email":"Jnation3@cfl.rr.com",
     "Phone":"(407) 620-8278"
     }
@@ -1060,7 +1061,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sylvia Banda",
-    "Home Address":"11327 Camp Creek Trail San Antonio Tx 78245",
+    "Address":"11327 Camp Creek Trail San Antonio Tx 78245",
     "Email":"silcrisb@aol.com",
     "Phone":"(956) 369-9504"
     }
@@ -1073,7 +1074,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tandra Brus",
-    "Home Address":"3414 Lake Ct. Rosharon Tx 77583 ",
+    "Address":"3414 Lake Ct. Rosharon Tx 77583 ",
     "Email":"tandrabrus@gmail.com",
     "Phone":"(817) 243-9501"
     }
@@ -1086,7 +1087,7 @@ var stores = {
     },
     "properties": {
     "Name":"Regina Brantley",
-    "Home Address":"7126 hibiscus falls, San Antonio, Tx 78218",
+    "Address":"7126 hibiscus falls, San Antonio, Tx 78218",
     "Email":"reginabran05@yahoo.com",
     "Phone":"(360) 610-3248"
     }
@@ -1099,7 +1100,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maria Del Bosque",
-    "Home Address":"8042 Swindow Circle Converse Tx 78109",
+    "Address":"8042 Swindow Circle Converse Tx 78109",
     "Email":"marydelbosque956@yahoo.com",
     "Phone":"(210) 712-8252"
     }
@@ -1112,7 +1113,7 @@ var stores = {
     },
     "properties": {
     "Name":"Chiniqua(Nikki) Limbrick",
-    "Home Address":"221 Rodeo dr manvel tx 77578",
+    "Address":"221 Rodeo dr manvel tx 77578",
     "Email":"chiniqual@yahoo.com",
     "Phone":"(832) 970-3861"
     }
@@ -1125,7 +1126,7 @@ var stores = {
     },
     "properties": {
     "Name":"Letitia Durant",
-    "Home Address":"9806 N. Meadow St. Converse, TX 78109",
+    "Address":"9806 N. Meadow St. Converse, TX 78109",
     "Email":"kianeshiau@yahoo.com",
     "Phone":"(248) 778-7123"
     }
@@ -1138,7 +1139,7 @@ var stores = {
     },
     "properties": {
     "Name":"Letitia Durant",
-    "Home Address":"9806 N. Meadow St., Converse, TX 78109",
+    "Address":"9806 N. Meadow St., Converse, TX 78109",
     "Email":"kianeshiau@yahoo.com",
     "Phone":"(248) 778-7123"
     }
@@ -1151,7 +1152,7 @@ var stores = {
     },
     "properties": {
     "Name":"Cheryl Link",
-    "Home Address":"2001 Gemini St. Apt. 1610 Houston,TX 77058",
+    "Address":"2001 Gemini St. Apt. 1610 Houston,TX 77058",
     "Email":"ciink53@aol.com",
     "Phone":"(281) 614-9273"
     }
@@ -1164,7 +1165,7 @@ var stores = {
     },
     "properties": {
     "Name":"Glenda Plasentillo",
-    "Home Address":"3110 Thousand Oaks dr apt 915 San Antonio Texas 78247",
+    "Address":"3110 Thousand Oaks dr apt 915 San Antonio Texas 78247",
     "Email":"glenda_hope47@yahoo.com",
     "Phone":"(210) 316-9359"
     }
@@ -1177,7 +1178,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sylvia Aguilar",
-    "Home Address":"239 global drive New Braunfels TX",
+    "Address":"239 global drive New Braunfels TX",
     "Email":"sil672003@uahoo.com",
     "Phone":"(830) 215-5355"
     }
@@ -1190,7 +1191,7 @@ var stores = {
     },
     "properties": {
     "Name":"Hazelann (Ann) LeMaster",
-    "Home Address":"903 Ridge Cloud, San Antonio, TX, 78260",
+    "Address":"903 Ridge Cloud, San Antonio, TX, 78260",
     "Email":"annlemaster@yahoo.com",
     "Phone":"(972) 948-9976"
     }
@@ -1203,7 +1204,7 @@ var stores = {
     },
     "properties": {
     "Name":"Donna Bodiford",
-    "Home Address":"26615 Snuggle Valley, San Antonio, TX 78260",
+    "Address":"26615 Snuggle Valley, San Antonio, TX 78260",
     "Email":"dbodiford@satx.rr.com",
     "Phone":"(210) 215-3195"
     }
@@ -1216,7 +1217,7 @@ var stores = {
     },
     "properties": {
     "Name":"Donna Bodiford",
-    "Home Address":"26615 Snuggle Valley, San Antonio, TX 78260",
+    "Address":"26615 Snuggle Valley, San Antonio, TX 78260",
     "Email":"dbodiford@satx.rr.com",
     "Phone":"(210) 215-3195"
     }
@@ -1229,7 +1230,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sandra Brooks",
-    "Home Address":"6314 Gladewell Drive Houston TX 77072",
+    "Address":"6314 Gladewell Drive Houston TX 77072",
     "Email":"brsugahbaby@gmail.com",
     "Phone":"(832) 978-8538"
     }
@@ -1242,7 +1243,7 @@ var stores = {
     },
     "properties": {
     "Name":"Shanequa Birdow",
-    "Home Address":"7011 Micayla cove",
+    "Address":"7011 Micayla cove",
     "Email":"sbirdow@yahoo.com",
     "Phone":"(817) 366-8695"
     }
@@ -1255,7 +1256,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kortney Kent",
-    "Home Address":"158 Bandera St, San Marcos, TX 78666",
+    "Address":"158 Bandera St, San Marcos, TX 78666",
     "Email":"kortneykent@gmail.com",
     "Phone":"(512) 648-9552"
     }
@@ -1268,7 +1269,7 @@ var stores = {
     },
     "properties": {
     "Name":"Quintesha James",
-    "Home Address":"14619 Hazy Ridge Ln Cypress,TX 77429",
+    "Address":"14619 Hazy Ridge Ln Cypress,TX 77429",
     "Email":"quintesha_j@yahoo.com",
     "Phone":"(936) 900-2081"
     }
@@ -1281,7 +1282,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lori Ellis",
-    "Home Address":"228 Spruce St. LaPlace La 70068",
+    "Address":"228 Spruce St. LaPlace La 70068",
     "Email":"loriellis411@gmail.com",
     "Phone":"(1504) 319-4950"
     }
@@ -1294,7 +1295,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maresha Moore",
-    "Home Address":"1960 Pierce St Beaumont, TX 77703",
+    "Address":"1960 Pierce St Beaumont, TX 77703",
     "Email":"maresha.moore@gmail.com",
     "Phone":"(713) 294-2174"
     }
@@ -1307,7 +1308,7 @@ var stores = {
     },
     "properties": {
     "Name":"Laura Leonard",
-    "Home Address":"403 North Michot Road, Lafayette, LA 70508",
+    "Address":"403 North Michot Road, Lafayette, LA 70508",
     "Email":"lauraleonard1987@gmail.com",
     "Phone":"(337) 280-7964"
     }
@@ -1320,7 +1321,7 @@ var stores = {
     },
     "properties": {
     "Name":"Laura Sajatovic",
-    "Home Address":"38 Pebble Hollow Ct., Spring, TX, 77381",
+    "Address":"38 Pebble Hollow Ct., Spring, TX, 77381",
     "Email":"laurasajatovic@gmail.com",
     "Phone":"(704) 651-7547"
     }
@@ -1333,7 +1334,7 @@ var stores = {
     },
     "properties": {
     "Name":"Veronica Skrine",
-    "Home Address":"300 Enclave Drive #3416 Conroe, TX, 77384",
+    "Address":"300 Enclave Drive #3416 Conroe, TX, 77384",
     "Email":"vskrine4hwp@outlook.com",
     "Phone":"(832) 398-5710"
     }
@@ -1346,7 +1347,7 @@ var stores = {
     },
     "properties": {
     "Name":"Barbara Wearing",
-    "Home Address":"7511 Thomas Springs Rd Apt. A Austin, TX 78736",
+    "Address":"7511 Thomas Springs Rd Apt. A Austin, TX 78736",
     "Email":"bwearing@msn.com",
     "Phone":"(512) 905-6922"
     }
@@ -1359,7 +1360,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ashley Morales",
-    "Home Address":"4664 Pecan St",
+    "Address":"4664 Pecan St",
     "Email":"ashleysworld00@yahoo.com",
     "Phone":"(504) 931-2117"
     }
@@ -1372,7 +1373,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nathan Patrick",
-    "Home Address":"11207 Sage Hollow Drive, Austin, TX 78758",
+    "Address":"11207 Sage Hollow Drive, Austin, TX 78758",
     "Email":"nathangpatrick@gmail.com",
     "Phone":"(682) 597-4950"
     }
@@ -1385,7 +1386,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nathan Patrick",
-    "Home Address":"11207 Sage Hollow Drive, Austin, TX 78758",
+    "Address":"11207 Sage Hollow Drive, Austin, TX 78758",
     "Email":"nathangpatrick@gmail.com",
     "Phone":"(682) 597-4950"
     }
@@ -1398,7 +1399,7 @@ var stores = {
     },
     "properties": {
     "Name":"Candice Carr",
-    "Home Address":"7103 Belle Christi Dr.  BR, LA 70817",
+    "Address":"7103 Belle Christi Dr.  BR, LA 70817",
     "Email":"candysmithcarr@gmail.com",
     "Phone":"(225) 954-1534"
     }
@@ -1411,7 +1412,7 @@ var stores = {
     },
     "properties": {
     "Name":"Misty Wilson",
-    "Home Address":"1603 Garnaas Dr, Austin, TX 78758",
+    "Address":"1603 Garnaas Dr, Austin, TX 78758",
     "Email":"mmwilson0103@gmail.com",
     "Phone":"(512) 429-3010"
     }
@@ -1424,7 +1425,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jeremy Jenkins-Lampert",
-    "Home Address":"20 Maples St NW fort walton beach fl 32548",
+    "Address":"20 Maples St NW fort walton beach fl 32548",
     "Email":"JeremyJenkinsLampert@kw.com",
     "Phone":"(321) 412-2980"
     }
@@ -1437,7 +1438,7 @@ var stores = {
     },
     "properties": {
     "Name":"Carrie Patrick",
-    "Home Address":"234 Sun Dr",
+    "Address":"234 Sun Dr",
     "Email":"ccornelius360@gmail.com",
     "Phone":"(1601) 624-9738"
     }
@@ -1450,7 +1451,7 @@ var stores = {
     },
     "properties": {
     "Name":"Alicia Collins",
-    "Home Address":"7950 E. Hwy 71, Llano, TX 78643",
+    "Address":"7950 E. Hwy 71, Llano, TX 78643",
     "Email":"aliciac_7@hotmail.com",
     "Phone":"(830) 596-3819"
     }
@@ -1463,7 +1464,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maria Gutierrez",
-    "Home Address":"2501 N. Louisiana Ave. Apt 08",
+    "Address":"2501 N. Louisiana Ave. Apt 08",
     "Email":"mariagtz24@hotmail.com",
     "Phone":"(956) 635-3377"
     }
@@ -1476,7 +1477,7 @@ var stores = {
     },
     "properties": {
     "Name":"Cardelia Haynes",
-    "Home Address":"4108 Bull Run Dr Killeen TX 76549",
+    "Address":"4108 Bull Run Dr Killeen TX 76549",
     "Email":"cdhaynes04@yahoo.com",
     "Phone":"(254) 245-2565"
     }
@@ -1489,7 +1490,7 @@ var stores = {
     },
     "properties": {
     "Name":"Robyn Campbell",
-    "Home Address":"300 River Place West, Gatesville, Texas 76528",
+    "Address":"300 River Place West, Gatesville, Texas 76528",
     "Email":"robyn.gogreen@aol.com",
     "Phone":"(254) 216-0122"
     }
@@ -1502,7 +1503,7 @@ var stores = {
     },
     "properties": {
     "Name":"Katherine Oliveaux",
-    "Home Address":"301 McNeely Road Apt 2E",
+    "Address":"301 McNeely Road Apt 2E",
     "Email":"koliveaux@outlook.com",
     "Phone":"(1601) 501-9708"
     }
@@ -1515,7 +1516,7 @@ var stores = {
     },
     "properties": {
     "Name":"Katherine Oliveaux",
-    "Home Address":"301 McNeely Road Apt 2E",
+    "Address":"301 McNeely Road Apt 2E",
     "Email":"koliveaux@outlook.com",
     "Phone":"(1601) 501-9708"
     }
@@ -1528,7 +1529,7 @@ var stores = {
     },
     "properties": {
     "Name":"Anita Smith",
-    "Home Address":"21 Club House Drive, Savannah, Georgia 31419",
+    "Address":"21 Club House Drive, Savannah, Georgia 31419",
     "Email":"goldies70@hotmail.com",
     "Phone":"(912) 980-9049"
     }
@@ -1541,7 +1542,7 @@ var stores = {
     },
     "properties": {
     "Name":"Anita Smith",
-    "Home Address":"21 Club House Drive, Savannah, Georgia 31419",
+    "Address":"21 Club House Drive, Savannah, Georgia 31419",
     "Email":"goldies70@hotmail.com",
     "Phone":"(912) 980-9049"
     }
@@ -1554,7 +1555,7 @@ var stores = {
     },
     "properties": {
     "Name":"Gloria West",
-    "Home Address":"212 Durham Park Way Pooler, Ga 31322",
+    "Address":"212 Durham Park Way Pooler, Ga 31322",
     "Email":"moosegkw@yahoo.cm",
     "Phone":"(912) 312-9131"
     }
@@ -1567,7 +1568,7 @@ var stores = {
     },
     "properties": {
     "Name":"Rosie Lopez",
-    "Home Address":"6771 S 12th Ave, Tucson, AZ 85756",
+    "Address":"6771 S 12th Ave, Tucson, AZ 85756",
     "Email":"rvl729@yahoo.com",
     "Phone":"(520) 909-5603"
     }
@@ -1580,7 +1581,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jane Reynolds",
-    "Home Address":"205 Roger Powell rd",
+    "Address":"205 Roger Powell rd",
     "Email":"jaokes@yahoo.com",
     "Phone":"(812) 459-2447"
     }
@@ -1593,7 +1594,7 @@ var stores = {
     },
     "properties": {
     "Name":"Cynthea Cameron",
-    "Home Address":"5425 E Holmes St  Tucson, AZ 85711",
+    "Address":"5425 E Holmes St  Tucson, AZ 85711",
     "Email":"contactcynthea@gmail.com",
     "Phone":"(520) 991-3365"
     }
@@ -1606,7 +1607,7 @@ var stores = {
     },
     "properties": {
     "Name":"Shaun Bennett West",
-    "Home Address":"1835 TJ Roberts Dr Jackson, MS 39213",
+    "Address":"1835 TJ Roberts Dr Jackson, MS 39213",
     "Email":"shaunbennwes@live.com",
     "Phone":"(678) 761-0275"
     }
@@ -1619,7 +1620,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kristen Ide",
-    "Home Address":"11968 E Lake Cir",
+    "Address":"11968 E Lake Cir",
     "Email":"kristen.ide@sbcglobal.net",
     "Phone":"(773) 220-0919"
     }
@@ -1632,7 +1633,7 @@ var stores = {
     },
     "properties": {
     "Name":"Brittany Patrick",
-    "Home Address":"234 Sun Dr Jackson, MS 39212",
+    "Address":"234 Sun Dr Jackson, MS 39212",
     "Email":"Brittanypatrick4@gmail.com",
     "Phone":"(601) 850-8094"
     }
@@ -1645,7 +1646,7 @@ var stores = {
     },
     "properties": {
     "Name":"Brittany Patrick",
-    "Home Address":"234 Sun Dr Jackson, MS 39211",
+    "Address":"234 Sun Dr Jackson, MS 39211",
     "Email":"brittanypatrick4@gmail.com",
     "Phone":"(601) 850-8094"
     }
@@ -1658,7 +1659,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jennifer Johnson (Huyck)",
-    "Home Address":"3051 Ebenezer Rd, Rincon Ga 31326",
+    "Address":"3051 Ebenezer Rd, Rincon Ga 31326",
     "Email":"jenifer.huyck@gmail.com",
     "Phone":"(912) 644-0218"
     }
@@ -1671,7 +1672,7 @@ var stores = {
     },
     "properties": {
     "Name":"Gary Davis",
-    "Home Address":"11600 W Emmer Drive Marana, AZ 85653",
+    "Address":"11600 W Emmer Drive Marana, AZ 85653",
     "Email":"garydinsf@yahoo.com",
     "Phone":"(520) 271-9642"
     }
@@ -1684,7 +1685,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ella Jones",
-    "Home Address":"4258 Joe Louis Street Shreveport,LA 71109",
+    "Address":"4258 Joe Louis Street Shreveport,LA 71109",
     "Email":"jonesella794@gmail.com",
     "Phone":"(318) 218-0505"
     }
@@ -1697,7 +1698,7 @@ var stores = {
     },
     "properties": {
     "Name":"DeAnna Hood",
-    "Home Address":"2619 Vivian St Shreveport,LA 71108",
+    "Address":"2619 Vivian St Shreveport,LA 71108",
     "Email":"deanna_deshun@hotmail.com",
     "Phone":"(318) 946-0965"
     }
@@ -1710,7 +1711,7 @@ var stores = {
     },
     "properties": {
     "Name":"PHALON N BELL",
-    "Home Address":"6003 Kings Way Walk",
+    "Address":"6003 Kings Way Walk",
     "Email":"phalonbell18@gmail.com",
     "Phone":"(678) 314-5493"
     }
@@ -1723,7 +1724,7 @@ var stores = {
     },
     "properties": {
     "Name":"Janet Anthony",
-    "Home Address":"1745 Barbara Ct   Hideaway, Texas 75771",
+    "Address":"1745 Barbara Ct   Hideaway, Texas 75771",
     "Email":"rupejan@gmail.com",
     "Phone":"(903) 920-4815"
     }
@@ -1736,7 +1737,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tina Platter",
-    "Home Address":"665 Sides Circle Canton, Texas 75103",
+    "Address":"665 Sides Circle Canton, Texas 75103",
     "Email":"tinaplatter@yahoo.com",
     "Phone":"(903) 408-0333"
     }
@@ -1749,7 +1750,7 @@ var stores = {
     },
     "properties": {
     "Name":"Irina Gleyzer",
-    "Home Address":"22614 Vistawood Way",
+    "Address":"22614 Vistawood Way",
     "Email":"irinag724@gmail.com",
     "Phone":"(954) 401-4015"
     }
@@ -1762,7 +1763,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jen Bradshaw",
-    "Home Address":"16222 S 34th Way",
+    "Address":"16222 S 34th Way",
     "Email":"jenniebrat@gmail.com",
     "Phone":"(860) 982-8456"
     }
@@ -1775,7 +1776,7 @@ var stores = {
     },
     "properties": {
     "Name":"Missy Mann",
-    "Home Address":"7000 Meihaus Way",
+    "Address":"7000 Meihaus Way",
     "Email":"missycammuse@yahoo.com",
     "Phone":"(502) 224-1911"
     }
@@ -1788,7 +1789,7 @@ var stores = {
     },
     "properties": {
     "Name":"Carolyn Lozoya",
-    "Home Address":"1900 Tierney rd Fort Worth Texas 76112",
+    "Address":"1900 Tierney rd Fort Worth Texas 76112",
     "Email":"cmooredr2@yahoo.com",
     "Phone":"(682) 206-8952"
     }
@@ -1801,7 +1802,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lisa Conklin",
-    "Home Address":"1001 Santa Fe Trl, Macon, GA 31220",
+    "Address":"1001 Santa Fe Trl, Macon, GA 31220",
     "Email":"conklinlisa@bellsouth.net",
     "Phone":"(678) 612-4870"
     }
@@ -1814,7 +1815,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nancy Jones",
-    "Home Address":"1091 Overlook Parkway Apt 815 Macon Ga 31210",
+    "Address":"1091 Overlook Parkway Apt 815 Macon Ga 31210",
     "Email":"ndavis_love@yahoo.com",
     "Phone":"(678) 613-4492"
     }
@@ -1827,7 +1828,7 @@ var stores = {
     },
     "properties": {
     "Name":"Carmel Desir",
-    "Home Address":"1801 London Crest dr apt 209",
+    "Address":"1801 London Crest dr apt 209",
     "Email":"carmel.desir@gmail.com",
     "Phone":"(407) 334-5350"
     }
@@ -1840,7 +1841,7 @@ var stores = {
     },
     "properties": {
     "Name":"Saud Alezzi",
-    "Home Address":"12060 Meadow Bend Loop APT 404",
+    "Address":"12060 Meadow Bend Loop APT 404",
     "Email":"dr.saoudalizzi@gmail.com",
     "Phone":"(917) 294-5805"
     }
@@ -1853,7 +1854,7 @@ var stores = {
     },
     "properties": {
     "Name":"Rolonda Bixby",
-    "Home Address":"8950 Moonlit Meadows Loop",
+    "Address":"8950 Moonlit Meadows Loop",
     "Email":"ronibixby@gmail.com",
     "Phone":"(813) 270-7690"
     }
@@ -1866,7 +1867,7 @@ var stores = {
     },
     "properties": {
     "Name":"Laura Regina",
-    "Home Address":"7215 9th Avenue West",
+    "Address":"7215 9th Avenue West",
     "Email":"lauraregina46@gmail.com",
     "Phone":"(1941) 713-2727"
     }
@@ -1879,7 +1880,7 @@ var stores = {
     },
     "properties": {
     "Name":"Shanon Meza",
-    "Home Address":"505 Cornhusker Rd",
+    "Address":"505 Cornhusker Rd",
     "Email":"shanonx4@gmail.com",
     "Phone":"(402) 980-9590"
     }
@@ -1892,7 +1893,7 @@ var stores = {
     },
     "properties": {
     "Name":"Yessenia Robles",
-    "Home Address":"2401 helena ave",
+    "Address":"2401 helena ave",
     "Email":"yvrobles91@gmail.com",
     "Phone":"(956) 534-6053"
     }
@@ -1905,7 +1906,7 @@ var stores = {
     },
     "properties": {
     "Name":"Patricia Ward",
-    "Home Address":"1016 Crossings Place, Griffin, GA 30223",
+    "Address":"1016 Crossings Place, Griffin, GA 30223",
     "Email":"schro66@hotmail.com",
     "Phone":"(470) 246-2586"
     }
@@ -1918,7 +1919,7 @@ var stores = {
     },
     "properties": {
     "Name":"Michelle Estrada",
-    "Home Address":"4411 E. Chandler blvd apt.2081 phoenix, az 85048",
+    "Address":"4411 E. Chandler blvd apt.2081 phoenix, az 85048",
     "Email":"mestrada8200@yahoo.com",
     "Phone":"(602) 214-5893"
     }
@@ -1931,7 +1932,7 @@ var stores = {
     },
     "properties": {
     "Name":"Joanne Lendor-Oliver",
-    "Home Address":"4348 Big Dipper Circle  Hephzibah, GA 30815",
+    "Address":"4348 Big Dipper Circle  Hephzibah, GA 30815",
     "Email":"j.lendoroliver@gmail.com",
     "Phone":"(706) 832-3840"
     }
@@ -1944,7 +1945,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maria Campbell",
-    "Home Address":"4222 E. San Gabriel Ave Phoenix, AZ 85044",
+    "Address":"4222 E. San Gabriel Ave Phoenix, AZ 85044",
     "Email":"mcaz1112@gmail.com",
     "Phone":"(1480) 628-1842"
     }
@@ -1957,7 +1958,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tanesha Stubbs",
-    "Home Address":"516 Grove Street North",
+    "Address":"516 Grove Street North",
     "Email":"taneshastubbs21@yahoo.com",
     "Phone":"(850) 368-6518"
     }
@@ -1970,7 +1971,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mary Anne Martinez",
-    "Home Address":"405 Ranch Road Ropesville Tx 79358",
+    "Address":"405 Ranch Road Ropesville Tx 79358",
     "Email":"mamkenedy1@gmail.com",
     "Phone":"(80) 689-1288"
     }
@@ -1983,7 +1984,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tiffani Davis",
-    "Home Address":"2202 Bungalow Rd, Augusta, GA 30906",
+    "Address":"2202 Bungalow Rd, Augusta, GA 30906",
     "Email":"tiffani_murff@hotmail.com",
     "Phone":"(504) 610-1547"
     }
@@ -1996,7 +1997,7 @@ var stores = {
     },
     "properties": {
     "Name":"Beverly Ferguson",
-    "Home Address":"1019 Murrell Block Drive, Pineville, SC 29468",
+    "Address":"1019 Murrell Block Drive, Pineville, SC 29468",
     "Email":"fbeverly763@gmail.com",
     "Phone":"(803) 645-7437"
     }
@@ -2009,7 +2010,7 @@ var stores = {
     },
     "properties": {
     "Name":"Christine Keogh",
-    "Home Address":"2100 N 145th Ave Apt 1032 Goodyear AZ 85395",
+    "Address":"2100 N 145th Ave Apt 1032 Goodyear AZ 85395",
     "Email":"chkeo1@gmail.com",
     "Phone":"(224) 545-1023"
     }
@@ -2022,7 +2023,7 @@ var stores = {
     },
     "properties": {
     "Name":"Pamela Lloyd",
-    "Home Address":"15683 W. Vernon Ave, Goodyear, Az 85395",
+    "Address":"15683 W. Vernon Ave, Goodyear, Az 85395",
     "Email":"mnmedlink@aol.com",
     "Phone":"(1623) 243-9287"
     }
@@ -2035,7 +2036,7 @@ var stores = {
     },
     "properties": {
     "Name":"Diane swanberg",
-    "Home Address":"8627 E Montecito Ave Scottsdale, AZ 85251",
+    "Address":"8627 E Montecito Ave Scottsdale, AZ 85251",
     "Email":"dianeswanberg@gmail.com",
     "Phone":"(602) 680-6378"
     }
@@ -2048,7 +2049,7 @@ var stores = {
     },
     "properties": {
     "Name":"Shante Mathis",
-    "Home Address":"489 Astoria Way Mcdonough, Ga 30253",
+    "Address":"489 Astoria Way Mcdonough, Ga 30253",
     "Email":"sarmstrong04@bellsouth.net",
     "Phone":"(770) 875-6185"
     }
@@ -2061,7 +2062,7 @@ var stores = {
     },
     "properties": {
     "Name":"Roslyn Bradley",
-    "Home Address":"151 Peartree ln Riverdale GA 30274",
+    "Address":"151 Peartree ln Riverdale GA 30274",
     "Email":"bradleyroslyn202@yahoo.com",
     "Phone":"(678) 900-5742"
     }
@@ -2074,7 +2075,7 @@ var stores = {
     },
     "properties": {
     "Name":"Elizabeth Davies",
-    "Home Address":"131 Amberwood Circle Conyers, GA 30094",
+    "Address":"131 Amberwood Circle Conyers, GA 30094",
     "Email":"ansley_davies@yahoo.com",
     "Phone":"(678) 373-5737"
     }
@@ -2087,7 +2088,7 @@ var stores = {
     },
     "properties": {
     "Name":"Erin Woehler",
-    "Home Address":"1108 Plantation Dr SE Conyers,Ga 30094",
+    "Address":"1108 Plantation Dr SE Conyers,Ga 30094",
     "Email":"enoelle2015@gmail.com",
     "Phone":"(770) 827-5329"
     }
@@ -2100,7 +2101,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tonia Dairon",
-    "Home Address":"2152 Belford Grove Drive #204 Aiken, South Carolina 29801",
+    "Address":"2152 Belford Grove Drive #204 Aiken, South Carolina 29801",
     "Email":"tdairon@yahoo.com",
     "Phone":"(803) 617-9378"
     }
@@ -2113,7 +2114,7 @@ var stores = {
     },
     "properties": {
     "Name":"Josephine Ramos",
-    "Home Address":"245 114th ave North  unit 1",
+    "Address":"245 114th ave North  unit 1",
     "Email":"josephineramos90@gmail.com",
     "Phone":"(1727) 692-5192"
     }
@@ -2126,7 +2127,7 @@ var stores = {
     },
     "properties": {
     "Name":"Shelia Rice DeLoach",
-    "Home Address":"13234 Joeandy Rd. North",
+    "Address":"13234 Joeandy Rd. North",
     "Email":"toothru@hotmail.com",
     "Phone":"(904) 234-1192"
     }
@@ -2139,7 +2140,7 @@ var stores = {
     },
     "properties": {
     "Name":"Brittany Richardson",
-    "Home Address":"2632 Essex Ct Conyers Ga 30013",
+    "Address":"2632 Essex Ct Conyers Ga 30013",
     "Email":"brittanyrichardson28@gmail.com",
     "Phone":"(989) 397-6116"
     }
@@ -2152,7 +2153,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tameka Colbert",
-    "Home Address":"3093 Roseheath Ct. Lithonia, GA 30038",
+    "Address":"3093 Roseheath Ct. Lithonia, GA 30038",
     "Email":"tameka.colbert1@gmail.com",
     "Phone":"(706) 573-3341"
     }
@@ -2165,7 +2166,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lisa Andrin-Mazur",
-    "Home Address":"6510 Hunter Ct. Phoenix Az 85083",
+    "Address":"6510 Hunter Ct. Phoenix Az 85083",
     "Email":"nurselisa2009@gmail.com",
     "Phone":"(623) 293-1198"
     }
@@ -2178,7 +2179,7 @@ var stores = {
     },
     "properties": {
     "Name":"RAMUNDA WRIGHT",
-    "Home Address":"7441 TWIN HILL WAY, F Austell, Georgia 30168",
+    "Address":"7441 TWIN HILL WAY, F Austell, Georgia 30168",
     "Email":"wramunda@gmail.com",
     "Phone":"(404) 380-0792"
     }
@@ -2191,7 +2192,7 @@ var stores = {
     },
     "properties": {
     "Name":"ToNita Robinson",
-    "Home Address":"5917 lone oak dr sw Mabelton Ga 30126",
+    "Address":"5917 lone oak dr sw Mabelton Ga 30126",
     "Email":"tonita.labs@gmail.com",
     "Phone":"(678) 392-0528"
     }
@@ -2204,7 +2205,7 @@ var stores = {
     },
     "properties": {
     "Name":"Patricia Juettner",
-    "Home Address":"508 Woodsong way Apt 201 symrna GA 30082",
+    "Address":"508 Woodsong way Apt 201 symrna GA 30082",
     "Email":"patriciajuettner@yahoo.com",
     "Phone":"(813) 842-9666"
     }
@@ -2217,7 +2218,7 @@ var stores = {
     },
     "properties": {
     "Name":"nancy davis",
-    "Home Address":"263 Megan Lane lexington sc 29073",
+    "Address":"263 Megan Lane lexington sc 29073",
     "Email":"praypray35@aol.com",
     "Phone":"(803) 479-1480"
     }
@@ -2230,7 +2231,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sandi Foggey",
-    "Home Address":"1463 Seafoam Ct, Marietta, GA 30066",
+    "Address":"1463 Seafoam Ct, Marietta, GA 30066",
     "Email":"sfoggey@gmail.com",
     "Phone":"(678) 851-0589"
     }
@@ -2243,7 +2244,7 @@ var stores = {
     },
     "properties": {
     "Name":"Velma Womack",
-    "Home Address":"2121 Counts Rd",
+    "Address":"2121 Counts Rd",
     "Email":"bellvelma2012@gmail.com",
     "Phone":"(1936) 355-6205"
     }
@@ -2256,7 +2257,7 @@ var stores = {
     },
     "properties": {
     "Name":"Velma Womack",
-    "Home Address":"2121 Counts Rd",
+    "Address":"2121 Counts Rd",
     "Email":"bellvelma2012@gmail.com",
     "Phone":"(1936) 355-6205"
     }
@@ -2269,7 +2270,7 @@ var stores = {
     },
     "properties": {
     "Name":"Susan Dickinson",
-    "Home Address":"8430 N Sherman",
+    "Address":"8430 N Sherman",
     "Email":"dickinsonsusan60@yahoo.com",
     "Phone":"(303) 887-0919"
     }
@@ -2282,7 +2283,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ruth Coleman",
-    "Home Address":"268 Foster Road; leave at door.",
+    "Address":"268 Foster Road; leave at door.",
     "Email":"ruth.coleman@yahoo.com",
     "Phone":"(205) 699-4488"
     }
@@ -2295,7 +2296,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jeremy Rathje",
-    "Home Address":"153 Windy Hill Rd, Central SC 29630",
+    "Address":"153 Windy Hill Rd, Central SC 29630",
     "Email":"jeremy.rathje@icloud.com",
     "Phone":"(479) 287-3109"
     }
@@ -2308,7 +2309,7 @@ var stores = {
     },
     "properties": {
     "Name":"Marilyn Rosado",
-    "Home Address":"3426 Dalton st",
+    "Address":"3426 Dalton st",
     "Email":"rosadomari35@gmail.com",
     "Phone":"(254) 285-7902"
     }
@@ -2321,7 +2322,7 @@ var stores = {
     },
     "properties": {
     "Name":"TOBIE BRITTON",
-    "Home Address":"5702 Fair Forest Dr",
+    "Address":"5702 Fair Forest Dr",
     "Email":"mistellt@yahoo.com",
     "Phone":"(281) 832-7011"
     }
@@ -2334,7 +2335,7 @@ var stores = {
     },
     "properties": {
     "Name":"Patricia (Patty) Sanders",
-    "Home Address":"3930 Skipping Stone Dr, Apison, TN 37302",
+    "Address":"3930 Skipping Stone Dr, Apison, TN 37302",
     "Email":"sanderspatty97@yahoo.com",
     "Phone":"(423) 309-6161"
     }
@@ -2347,7 +2348,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tawainna Houston",
-    "Home Address":"280 Northern Ave, #18-J",
+    "Address":"280 Northern Ave, #18-J",
     "Email":"drtawainnahouston@gmail.com",
     "Phone":"(404) 493-6414"
     }
@@ -2360,7 +2361,7 @@ var stores = {
     },
     "properties": {
     "Name":"Angie Nelson",
-    "Home Address":"18072  P .O box ",
+    "Address":"18072  P .O box ",
     "Email":"angienel112@outlook.com",
     "Phone":"(561) 603-6729"
     }
@@ -2373,7 +2374,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maranda Sweeting",
-    "Home Address":"18853 NW 65th Court",
+    "Address":"18853 NW 65th Court",
     "Email":"Sweeting42@gmail.com",
     "Phone":"(954) 952-4147"
     }
@@ -2386,7 +2387,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sheri Lawson",
-    "Home Address":"2383 Whippoorwill ln Las Vegas, NV 89121",
+    "Address":"2383 Whippoorwill ln Las Vegas, NV 89121",
     "Email":"sherilawson@me.com",
     "Phone":"(805) 338-4671"
     }
@@ -2399,7 +2400,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maria Sanchez",
-    "Home Address":"1101 E TULANE ST",
+    "Address":"1101 E TULANE ST",
     "Email":"mamosanchez22@gmail.com",
     "Phone":"(1806) 773-1984"
     }
@@ -2412,7 +2413,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maria Sanchez",
-    "Home Address":"1101 E TULANE ST",
+    "Address":"1101 E TULANE ST",
     "Email":"mamosanchez22@gmail.com",
     "Phone":"(1806) 773-1984"
     }
@@ -2425,7 +2426,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maria Sanchez",
-    "Home Address":"1101 E TULANE ST",
+    "Address":"1101 E TULANE ST",
     "Email":"mamosanchez22@gmail.com",
     "Phone":"(1806) 773-1984"
     }
@@ -2438,7 +2439,7 @@ var stores = {
     },
     "properties": {
     "Name":"Taccara Lee",
-    "Home Address":"100 Leslie Oaks Dr",
+    "Address":"100 Leslie Oaks Dr",
     "Email":"teelee31405@yahoo.com",
     "Phone":"(912) 441-0340"
     }
@@ -2451,7 +2452,7 @@ var stores = {
     },
     "properties": {
     "Name":"OLENA KUZMENKO",
-    "Home Address":"3900 OAKS CLUBHOUSE DR",
+    "Address":"3900 OAKS CLUBHOUSE DR",
     "Email":"k.lena06@gmail.com",
     "Phone":"(786) 357-5918"
     }
@@ -2464,7 +2465,7 @@ var stores = {
     },
     "properties": {
     "Name":"Idella Woodard",
-    "Home Address":"415 America rd Nashville, TN. 37209",
+    "Address":"415 America rd Nashville, TN. 37209",
     "Email":"iwoodard@outlook.com",
     "Phone":"(615) 596-5371"
     }
@@ -2477,7 +2478,7 @@ var stores = {
     },
     "properties": {
     "Name":"Linda Hernandez",
-    "Home Address":"3610 N Las Vegas Blvd Las Vegas Nv 89115",
+    "Address":"3610 N Las Vegas Blvd Las Vegas Nv 89115",
     "Email":"lindaarlenehernandez@gmail.com",
     "Phone":"(210) 571-2863"
     }
@@ -2490,7 +2491,7 @@ var stores = {
     },
     "properties": {
     "Name":"David Thompson",
-    "Home Address":"3441 Northwind Dr. Cookeville, TN 38506",
+    "Address":"3441 Northwind Dr. Cookeville, TN 38506",
     "Email":"dmt9494@yahoo.com",
     "Phone":"(931) 644-9644"
     }
@@ -2503,7 +2504,7 @@ var stores = {
     },
     "properties": {
     "Name":"Debra Megli",
-    "Home Address":"4022 Ridgetop Dr",
+    "Address":"4022 Ridgetop Dr",
     "Email":"nurscope@sbcglobal.net",
     "Phone":"(469) 682-5943"
     }
@@ -2516,7 +2517,7 @@ var stores = {
     },
     "properties": {
     "Name":"Debra Megli",
-    "Home Address":"4022 Ridgetop Dr",
+    "Address":"4022 Ridgetop Dr",
     "Email":"nurscope@sbcglobal.net",
     "Phone":"(469) 682-5943"
     }
@@ -2529,7 +2530,7 @@ var stores = {
     },
     "properties": {
     "Name":"Selena Trivette",
-    "Home Address":"321 Winding Road Bristol, TN 37620",
+    "Address":"321 Winding Road Bristol, TN 37620",
     "Email":"tselena321@aol.com",
     "Phone":"(423) 340-1281"
     }
@@ -2542,7 +2543,7 @@ var stores = {
     },
     "properties": {
     "Name":"Stephanie Small",
-    "Home Address":"172 Laverne Drive",
+    "Address":"172 Laverne Drive",
     "Email":"Smallstephanie@aol.com",
     "Phone":"(985) 856-9539"
     }
@@ -2555,7 +2556,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kimberly Hale",
-    "Home Address":"100 Lee Lane, Hopkinsville KY 42240",
+    "Address":"100 Lee Lane, Hopkinsville KY 42240",
     "Email":"Halekl1971@gmail.com",
     "Phone":"(270) 206-2813"
     }
@@ -2568,7 +2569,7 @@ var stores = {
     },
     "properties": {
     "Name":"Virginia Gozdecki",
-    "Home Address":"2153 E Page Mill Dr",
+    "Address":"2153 E Page Mill Dr",
     "Email":"ginnyjg@aol.com",
     "Phone":"(520) 873-7955"
     }
@@ -2581,7 +2582,7 @@ var stores = {
     },
     "properties": {
     "Name":"Christina Donohoe",
-    "Home Address":"936 SHIVE LN LOT 8, Bowling Green,  KY  42103",
+    "Address":"936 SHIVE LN LOT 8, Bowling Green,  KY  42103",
     "Email":"christina.donohoe@ymail.com",
     "Phone":"(1270) 792-1422"
     }
@@ -2594,7 +2595,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ron Pollard",
-    "Home Address":"114 Hampton Road Apt. 102",
+    "Address":"114 Hampton Road Apt. 102",
     "Email":"ronpollard11@yahoo.com",
     "Phone":"(727) 423-4110"
     }
@@ -2607,7 +2608,7 @@ var stores = {
     },
     "properties": {
     "Name":"Trina Horn",
-    "Home Address":"1402 Barlow Ave",
+    "Address":"1402 Barlow Ave",
     "Email":"hornt30@yahoo.com",
     "Phone":"(214) 289-2494"
     }
@@ -2620,7 +2621,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mary Hawkins",
-    "Home Address":"6776 Bundy Rd.",
+    "Address":"6776 Bundy Rd.",
     "Email":"maryhawk84@gmail.com",
     "Phone":"(202) 870-4881"
     }
@@ -2633,7 +2634,7 @@ var stores = {
     },
     "properties": {
     "Name":"Rebekah Rogers",
-    "Home Address":"1445 Salem Church Road",
+    "Address":"1445 Salem Church Road",
     "Email":"rarogers27@yahoo.com",
     "Phone":"(540) 931-6177"
     }
@@ -2646,7 +2647,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sonya Beard",
-    "Home Address":"121 Tuscany Way Richmond KY 40475",
+    "Address":"121 Tuscany Way Richmond KY 40475",
     "Email":"sonyarbeden@yahoo.com",
     "Phone":"(304) 941-7957"
     }
@@ -2659,7 +2660,7 @@ var stores = {
     },
     "properties": {
     "Name":"Liza Copete",
-    "Home Address":"3260 CLOVERPLACE DR",
+    "Address":"3260 CLOVERPLACE DR",
     "Email":"lizalola@hotmail.com",
     "Phone":"(727) 301-6579"
     }
@@ -2672,7 +2673,7 @@ var stores = {
     },
     "properties": {
     "Name":"Deanna Smith",
-    "Home Address":"23355 Louisville Nashville Tnpk #E. West Point KY 40177",
+    "Address":"23355 Louisville Nashville Tnpk #E. West Point KY 40177",
     "Email":"espmom36@msn.com",
     "Phone":"(502) 648-3615"
     }
@@ -2685,7 +2686,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kathy Scherzinger",
-    "Home Address":"255 S Pelzer Rd",
+    "Address":"255 S Pelzer Rd",
     "Email":"kscherz@live.com",
     "Phone":"(812) 205-6343"
     }
@@ -2698,7 +2699,7 @@ var stores = {
     },
     "properties": {
     "Name":"Emily Ginter",
-    "Home Address":"3805 still meadow lane Lexington, ky 40509",
+    "Address":"3805 still meadow lane Lexington, ky 40509",
     "Email":"emilyginter@yahoo.com",
     "Phone":"(859) 595-7688"
     }
@@ -2711,7 +2712,7 @@ var stores = {
     },
     "properties": {
     "Name":"Malinda Donnelly",
-    "Home Address":"6526 n Olympia Ave",
+    "Address":"6526 n Olympia Ave",
     "Email":"malinda@godonnelly.com",
     "Phone":"(708) 715-2168"
     }
@@ -2724,7 +2725,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lisa Flowers",
-    "Home Address":"1932 w Pratt Blvd #3",
+    "Address":"1932 w Pratt Blvd #3",
     "Email":"lbenson1061@gmail.com",
     "Phone":"(773) 315-6931"
     }
@@ -2737,7 +2738,7 @@ var stores = {
     },
     "properties": {
     "Name":"Erin Goodlett",
-    "Home Address":"475 Stream View Dr shelbyville Ky 40065",
+    "Address":"475 Stream View Dr shelbyville Ky 40065",
     "Email":"erin.goodlett@gmail.com",
     "Phone":"(502) 232-5021"
     }
@@ -2750,7 +2751,7 @@ var stores = {
     },
     "properties": {
     "Name":"Rachel Buttermann",
-    "Home Address":"2026 Bonnycastle Ave. Louisville KY 40205",
+    "Address":"2026 Bonnycastle Ave. Louisville KY 40205",
     "Email":"buttertlc@yahoo.com",
     "Phone":"(512) 922-3996"
     }
@@ -2763,7 +2764,7 @@ var stores = {
     },
     "properties": {
     "Name":"Alicia Stokes",
-    "Home Address":"1510 Russell Lee Dr Lou, KY 40211",
+    "Address":"1510 Russell Lee Dr Lou, KY 40211",
     "Email":"aliweat@aol.com",
     "Phone":"(1502) 314-1736"
     }
@@ -2776,7 +2777,7 @@ var stores = {
     },
     "properties": {
     "Name":"Frita Pineda",
-    "Home Address":"12511 Glenna Avenue",
+    "Address":"12511 Glenna Avenue",
     "Email":"fritapineda@gmail.com",
     "Phone":"(336) 987-5439"
     }
@@ -2789,7 +2790,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nicholas Marchione",
-    "Home Address":"6353 NW 40th Avenue",
+    "Address":"6353 NW 40th Avenue",
     "Email":"nm@live.com",
     "Phone":"(954) 857-9621"
     }
@@ -2802,7 +2803,7 @@ var stores = {
     },
     "properties": {
     "Name":"Andriy Paikoush",
-    "Home Address":"6N909 Roosevelt Avenue",
+    "Address":"6N909 Roosevelt Avenue",
     "Email":"paikoush@gmail.com",
     "Phone":"(630) 485-0516"
     }
@@ -2815,7 +2816,7 @@ var stores = {
     },
     "properties": {
     "Name":"Laura Stethen",
-    "Home Address":"4750 Charlestown Rd",
+    "Address":"4750 Charlestown Rd",
     "Email":"lstethen@yahoo.com",
     "Phone":"(502) 523-0590"
     }
@@ -2828,7 +2829,7 @@ var stores = {
     },
     "properties": {
     "Name":"Barbara Rising",
-    "Home Address":"19455 E GUNNISON PL",
+    "Address":"19455 E GUNNISON PL",
     "Email":"bcstewartus@gmail.com",
     "Phone":"(303) 525-5122"
     }
@@ -2841,7 +2842,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tamela Banner",
-    "Home Address":"1907 Windsor Creek Dr Sw ",
+    "Address":"1907 Windsor Creek Dr Sw ",
     "Email":"mrsbanner0629@gmail.com",
     "Phone":"(313) 399-6095"
     }
@@ -2854,7 +2855,7 @@ var stores = {
     },
     "properties": {
     "Name":"Amanda Brown",
-    "Home Address":"1505 lynn city rd, Sacramento",
+    "Address":"1505 lynn city rd, Sacramento",
     "Email":"Amanda6brown@gmail.com",
     "Phone":"(270) 993-7360"
     }
@@ -2867,7 +2868,7 @@ var stores = {
     },
     "properties": {
     "Name":"Christopher Oliver",
-    "Home Address":"8445 QUARTER HORSE DRIVE, RIVERVIEW",
+    "Address":"8445 QUARTER HORSE DRIVE, RIVERVIEW",
     "Email":"canes11.co@gmail.com",
     "Phone":"(727) 643-4495"
     }
@@ -2880,7 +2881,7 @@ var stores = {
     },
     "properties": {
     "Name":"Margarette Freeman",
-    "Home Address":"310 west Emma steet",
+    "Address":"310 west Emma steet",
     "Email":"megs149.mf@gmail.com",
     "Phone":"(848) 992-5991"
     }
@@ -2893,7 +2894,7 @@ var stores = {
     },
     "properties": {
     "Name":"Alan Lay",
-    "Home Address":"28 Windfield Way Florence KY 41042",
+    "Address":"28 Windfield Way Florence KY 41042",
     "Email":"alanlay@fuse.net",
     "Phone":"(859) 802-3539"
     }
@@ -2906,7 +2907,7 @@ var stores = {
     },
     "properties": {
     "Name":"Brenda Love",
-    "Home Address":"3622 NE Basswood Drive Lee's Summit, MO  64064",
+    "Address":"3622 NE Basswood Drive Lee's Summit, MO  64064",
     "Email":"brendajlove77@gmail.com",
     "Phone":"(925) 437-1034"
     }
@@ -2919,7 +2920,7 @@ var stores = {
     },
     "properties": {
     "Name":"Suzanne.           (  Suzy) Fitzpatrick",
-    "Home Address":"7708w98th st. Overland. Park, KS.",
+    "Address":"7708w98th st. Overland. Park, KS.",
     "Email":"suzyfitz@att.net",
     "Phone":"(913) 908-9834"
     }
@@ -2932,7 +2933,7 @@ var stores = {
     },
     "properties": {
     "Name":"Dacy Berry",
-    "Home Address":"261 N Antigo Pl. Romney, WV 26757",
+    "Address":"261 N Antigo Pl. Romney, WV 26757",
     "Email":"jndberry@gmail.com",
     "Phone":"(304) 919-1536"
     }
@@ -2945,7 +2946,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tommy Dubinski",
-    "Home Address":"22222 Garrison st",
+    "Address":"22222 Garrison st",
     "Email":"TOMMYD811@BELLSOUTH.NET",
     "Phone":"(1954) 675-5855"
     }
@@ -2958,7 +2959,7 @@ var stores = {
     },
     "properties": {
     "Name":"Denise Pittillo",
-    "Home Address":"11906  Seven 1/2 Street",
+    "Address":"11906  Seven 1/2 Street",
     "Email":"denise62mann@gmail.com",
     "Phone":"(618) 365-5372"
     }
@@ -2971,7 +2972,7 @@ var stores = {
     },
     "properties": {
     "Name":"carolyn lozoya",
-    "Home Address":"1900 TIERNEY RD.",
+    "Address":"1900 TIERNEY RD.",
     "Email":"cmooredr2@yahoo.com",
     "Phone":"(682) 206-8952"
     }
@@ -2984,7 +2985,7 @@ var stores = {
     },
     "properties": {
     "Name":"Triver Mondy",
-    "Home Address":"3644 Binz-Engleman Rd #4305",
+    "Address":"3644 Binz-Engleman Rd #4305",
     "Email":"tmondy59@gmail.com",
     "Phone":"(210) 457-9236"
     }
@@ -2997,7 +2998,7 @@ var stores = {
     },
     "properties": {
     "Name":"John Tsangaris",
-    "Home Address":"4372 67th Ave N",
+    "Address":"4372 67th Ave N",
     "Email":"jrtsangaris@hotmail.com",
     "Phone":"(727) 520-2626"
     }
@@ -3010,7 +3011,7 @@ var stores = {
     },
     "properties": {
     "Name":"Greg Schaffer",
-    "Home Address":"373 GLOUCESTER STREET",
+    "Address":"373 GLOUCESTER STREET",
     "Email":"jgschaffer@gmail.com",
     "Phone":"(727) 373-9933"
     }
@@ -3023,7 +3024,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kelsey Carbary",
-    "Home Address":"109 Chatham Square",
+    "Address":"109 Chatham Square",
     "Email":"kgcarbary@yahoo.com",
     "Phone":"(512) 591-1365"
     }
@@ -3036,7 +3037,7 @@ var stores = {
     },
     "properties": {
     "Name":"Debra Rickerd",
-    "Home Address":"177 Avon Ave",
+    "Address":"177 Avon Ave",
     "Email":"newdar2@aol.com",
     "Phone":"(859) 321-5999"
     }
@@ -3049,7 +3050,7 @@ var stores = {
     },
     "properties": {
     "Name":"Roxanne Hernandez",
-    "Home Address":"628 Forsythe Ave ",
+    "Address":"628 Forsythe Ave ",
     "Email":"rsandoval628@gmail.com",
     "Phone":"(312) 662-2872"
     }
@@ -3062,7 +3063,7 @@ var stores = {
     },
     "properties": {
     "Name":"Billie Hendry",
-    "Home Address":"7178 Four Rivers Rd,  Boulder, CO  80301",
+    "Address":"7178 Four Rivers Rd,  Boulder, CO  80301",
     "Email":"behendry@gmail.com",
     "Phone":"(303) 530-0251"
     }
@@ -3075,7 +3076,7 @@ var stores = {
     },
     "properties": {
     "Name":"Angela Allen",
-    "Home Address":"1067 NW 33rd Manor",
+    "Address":"1067 NW 33rd Manor",
     "Email":"angtayall@aol.com",
     "Phone":"(954) 479-9581"
     }
@@ -3088,7 +3089,7 @@ var stores = {
     },
     "properties": {
     "Name":"Marielle Teliphat",
-    "Home Address":"1012 parkhill dr",
+    "Address":"1012 parkhill dr",
     "Email":"mariellerhodes@gmail.com",
     "Phone":"(786) 281-7386"
     }
@@ -3101,7 +3102,7 @@ var stores = {
     },
     "properties": {
     "Name":"Maggie Passement",
-    "Home Address":"301 Gallop Drive, Lafayette, IN 47905",
+    "Address":"301 Gallop Drive, Lafayette, IN 47905",
     "Email":"mjruemler@gmail.com",
     "Phone":"(317) 508-8894"
     }
@@ -3114,7 +3115,7 @@ var stores = {
     },
     "properties": {
     "Name":"E'Lisha Valentine",
-    "Home Address":"4512 N Elston Ave #2",
+    "Address":"4512 N Elston Ave #2",
     "Email":"elishavalentine2003@yahoo.com",
     "Phone":"(773) 939-2312"
     }
@@ -3127,7 +3128,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lisa Vannata",
-    "Home Address":"5641 Mossberg Drive",
+    "Address":"5641 Mossberg Drive",
     "Email":"LVANNATA64@VERIZON.NET",
     "Phone":"(727) 505-3864"
     }
@@ -3140,7 +3141,7 @@ var stores = {
     },
     "properties": {
     "Name":"Morgan Gonzalez",
-    "Home Address":"12101 Wasatch Court",
+    "Address":"12101 Wasatch Court",
     "Email":"morgan.rose.gonzalez@gmail.com",
     "Phone":"(813) 601-3102"
     }
@@ -3153,7 +3154,7 @@ var stores = {
     },
     "properties": {
     "Name":"Elizabeth Licon",
-    "Home Address":"8322 Forest Ridge Dr",
+    "Address":"8322 Forest Ridge Dr",
     "Email":"elizabeth.licon@ymail.com",
     "Phone":"(210) 396-0872"
     }
@@ -3166,7 +3167,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nicole locher",
-    "Home Address":"103 s Osceola st",
+    "Address":"103 s Osceola st",
     "Email":"nicole.sode@gmail.com",
     "Phone":"(1815) 630-6797"
     }
@@ -3179,7 +3180,7 @@ var stores = {
     },
     "properties": {
     "Name":"Patrician Gamble",
-    "Home Address":"3013 TOULON DR APT C",
+    "Address":"3013 TOULON DR APT C",
     "Email":"maurisha158@yahoo.com",
     "Phone":"(251) 623-2385"
     }
@@ -3192,7 +3193,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sarah Flores",
-    "Home Address":"6024 Mary Lewis Dr",
+    "Address":"6024 Mary Lewis Dr",
     "Email":"scflores.2014@gmail.com",
     "Phone":"(512) 573-4841"
     }
@@ -3205,7 +3206,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sarah Flores",
-    "Home Address":"6024 Mary Lewis Dr",
+    "Address":"6024 Mary Lewis Dr",
     "Email":"scflores.2014@gmail.com",
     "Phone":"(512) 573-4841"
     }
@@ -3218,7 +3219,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jonathan Alfaro",
-    "Home Address":"12415 S 68th Ct",
+    "Address":"12415 S 68th Ct",
     "Email":"jsalfaro935@gmail.com",
     "Phone":"(708) 935-0955"
     }
@@ -3231,7 +3232,7 @@ var stores = {
     },
     "properties": {
     "Name":"Priscilla Barragan",
-    "Home Address":"14730 ketelaar dr apt 3w Midlothian, Il. 60445",
+    "Address":"14730 ketelaar dr apt 3w Midlothian, Il. 60445",
     "Email":"pbarragan0118@yahoo.com",
     "Phone":"(708) 646-5630"
     }
@@ -3244,7 +3245,7 @@ var stores = {
     },
     "properties": {
     "Name":"Dawn Mencarini",
-    "Home Address":"1280 GRENADA AVE",
+    "Address":"1280 GRENADA AVE",
     "Email":"dmencari@tampabay.rr.com",
     "Phone":"(727) 410-3776"
     }
@@ -3257,7 +3258,7 @@ var stores = {
     },
     "properties": {
     "Name":"Cassondra Brown",
-    "Home Address":"2259 Doris Drive",
+    "Address":"2259 Doris Drive",
     "Email":"Cass1423@yahoo.com",
     "Phone":"(1770) 866-1334"
     }
@@ -3270,7 +3271,7 @@ var stores = {
     },
     "properties": {
     "Name":"Irene Stasula",
-    "Home Address":"8458 w Windsor Chicago, il 60656",
+    "Address":"8458 w Windsor Chicago, il 60656",
     "Email":"istasula@uic.edu",
     "Phone":"(1773) 320-1735"
     }
@@ -3283,7 +3284,7 @@ var stores = {
     },
     "properties": {
     "Name":"Yonia Yonan",
-    "Home Address":"3915 W Sherwin Ave lincolnwood IL 60712",
+    "Address":"3915 W Sherwin Ave lincolnwood IL 60712",
     "Email":"yoniahgn@yahoo.com",
     "Phone":"(847) 527-7584"
     }
@@ -3296,7 +3297,7 @@ var stores = {
     },
     "properties": {
     "Name":"Arvind Datt",
-    "Home Address":"4435 Kirk St. Skokie, IL. 60076",
+    "Address":"4435 Kirk St. Skokie, IL. 60076",
     "Email":"adatt71@yahoo.com",
     "Phone":"(217) 379-1419"
     }
@@ -3309,7 +3310,7 @@ var stores = {
     },
     "properties": {
     "Name":"Irene Gonzalez",
-    "Home Address":"3067 Charter Oaks Dr.Houston,Tx.77093",
+    "Address":"3067 Charter Oaks Dr.Houston,Tx.77093",
     "Email":"ahcp2010@gmail.com",
     "Phone":"(832) 552-2961"
     }
@@ -3322,7 +3323,7 @@ var stores = {
     },
     "properties": {
     "Name":"Erin Rednour",
-    "Home Address":"710 Oceola Dr., Algonquin IL 60102",
+    "Address":"710 Oceola Dr., Algonquin IL 60102",
     "Email":"ejred9@gmail.com",
     "Phone":"(217) 370-2383"
     }
@@ -3335,7 +3336,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mary Kaye Graham",
-    "Home Address":"2929 11th st,  Rockford, IL 61109",
+    "Address":"2929 11th st,  Rockford, IL 61109",
     "Email":"mkgogetter@yahoo.com",
     "Phone":"(815) 708-9361"
     }
@@ -3348,7 +3349,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mikeisha Richardson",
-    "Home Address":"6891 Country Ln Dearborn Heights, MI 48127",
+    "Address":"6891 Country Ln Dearborn Heights, MI 48127",
     "Email":"mn_rich@yahoo.com",
     "Phone":"(989) 714-1578"
     }
@@ -3361,7 +3362,7 @@ var stores = {
     },
     "properties": {
     "Name":"Anita Simms",
-    "Home Address":"5952 Wedgewood cv",
+    "Address":"5952 Wedgewood cv",
     "Email":"chinaj70@gmail.com",
     "Phone":"(901) 246-2313"
     }
@@ -3374,7 +3375,7 @@ var stores = {
     },
     "properties": {
     "Name":"Fatima Khan",
-    "Home Address":"4061 Grandview Ave Gurnee Il 60031",
+    "Address":"4061 Grandview Ave Gurnee Il 60031",
     "Email":"fkhan031980@yahoo.com",
     "Phone":"(773) 510-5146"
     }
@@ -3387,7 +3388,7 @@ var stores = {
     },
     "properties": {
     "Name":"Yolanda Lopez",
-    "Home Address":"7402 Springfield Ave Apt 1202",
+    "Address":"7402 Springfield Ave Apt 1202",
     "Email":"yolanda115907@gmail.com",
     "Phone":"(956) 319-0959"
     }
@@ -3400,7 +3401,7 @@ var stores = {
     },
     "properties": {
     "Name":"Alicia Barrera",
-    "Home Address":"6903 border brook apt 1905",
+    "Address":"6903 border brook apt 1905",
     "Email":"abarrera0770@gmail.com",
     "Phone":"(956) 434-9024"
     }
@@ -3413,7 +3414,7 @@ var stores = {
     },
     "properties": {
     "Name":"pamela richardson",
-    "Home Address":"2632 Essex Court",
+    "Address":"2632 Essex Court",
     "Email":"msp4ubellville@aol.com",
     "Phone":"(989) 714-4023"
     }
@@ -3426,7 +3427,7 @@ var stores = {
     },
     "properties": {
     "Name":"Nickesha Bartley",
-    "Home Address":"3828 Ferncliff rd",
+    "Address":"3828 Ferncliff rd",
     "Email":"nicmolizio2@gmail.com",
     "Phone":"(404) 254-9910"
     }
@@ -3439,7 +3440,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kelly Johnson",
-    "Home Address":"3333 5th Ave Unit 3D South Milwaukee, WI 53172",
+    "Address":"3333 5th Ave Unit 3D South Milwaukee, WI 53172",
     "Email":"Summersgirl625@yahoo.com",
     "Phone":"(414) 388-7362"
     }
@@ -3452,7 +3453,7 @@ var stores = {
     },
     "properties": {
     "Name":"Mai Chou Yang",
-    "Home Address":"5226 W Plainfield Ave, Milwaukee WI 53220",
+    "Address":"5226 W Plainfield Ave, Milwaukee WI 53220",
     "Email":"maichouyang89@gmail.com",
     "Phone":"(414) 334-7030"
     }
@@ -3465,7 +3466,7 @@ var stores = {
     },
     "properties": {
     "Name":"MARIA UNES",
-    "Home Address":"680 JEFFERSON ST",
+    "Address":"680 JEFFERSON ST",
     "Email":"mariagabby34@gmail.com",
     "Phone":"(504) 451-9489"
     }
@@ -3478,7 +3479,7 @@ var stores = {
     },
     "properties": {
     "Name":"Reeyana Cha",
-    "Home Address":"2760 Princeton Rd Brookfield, WI 53005",
+    "Address":"2760 Princeton Rd Brookfield, WI 53005",
     "Email":"reeyana.c@gmail.com",
     "Phone":"(262) 751-4936"
     }
@@ -3491,7 +3492,7 @@ var stores = {
     },
     "properties": {
     "Name":"Craig Canady",
-    "Home Address":"224 1/2 North Shilling Ave, Blackfoot, ID 83221",
+    "Address":"224 1/2 North Shilling Ave, Blackfoot, ID 83221",
     "Email":"pantherajourneys@gmail.com",
     "Phone":"(520) 987-0425"
     }
@@ -3504,7 +3505,7 @@ var stores = {
     },
     "properties": {
     "Name":"Pa Xiong",
-    "Home Address":"9545 N 60th Street, Brown Deer, WI 53223",
+    "Address":"9545 N 60th Street, Brown Deer, WI 53223",
     "Email":"xiongpa@mtmary.edu",
     "Phone":"(414) 530-5573"
     }
@@ -3517,7 +3518,7 @@ var stores = {
     },
     "properties": {
     "Name":"MICHELLE CABEZAS",
-    "Home Address":"14827 Sandy Creek Drive",
+    "Address":"14827 Sandy Creek Drive",
     "Email":"michellecabezas73@gmail.com",
     "Phone":"(409) 256-4227"
     }
@@ -3530,7 +3531,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tywanda Cannon",
-    "Home Address":"5530 Brown Road",
+    "Address":"5530 Brown Road",
     "Email":"tywandacannon47@gmail.com",
     "Phone":"(1225) 244-5383"
     }
@@ -3543,7 +3544,7 @@ var stores = {
     },
     "properties": {
     "Name":"See Lee",
-    "Home Address":"1298 Mayer Street Menasha WI 54952",
+    "Address":"1298 Mayer Street Menasha WI 54952",
     "Email":"see.examswi@gmail.com",
     "Phone":"(920) 378-6806"
     }
@@ -3556,7 +3557,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sara Sheldon",
-    "Home Address":"1168 C Scheuring Rd. De Pere, WI 54115",
+    "Address":"1168 C Scheuring Rd. De Pere, WI 54115",
     "Email":"sarasheldon9@gmail.com",
     "Phone":"(920) 562-1534"
     }
@@ -3569,7 +3570,7 @@ var stores = {
     },
     "properties": {
     "Name":"LISA LONGORIA",
-    "Home Address":"7721 CEDRO DR",
+    "Address":"7721 CEDRO DR",
     "Email":"llongoria.ht@outlook.com",
     "Phone":"(361) 442-6780"
     }
@@ -3582,7 +3583,7 @@ var stores = {
     },
     "properties": {
     "Name":"LISA LONGORIA",
-    "Home Address":"7721 CEDRO DR",
+    "Address":"7721 CEDRO DR",
     "Email":"llongoria.ht@outlook.com",
     "Phone":"(361) 442-6780"
     }
@@ -3595,7 +3596,7 @@ var stores = {
     },
     "properties": {
     "Name":"Kori Auner",
-    "Home Address":"711 N 6th Ave, Wausau WI",
+    "Address":"711 N 6th Ave, Wausau WI",
     "Email":"kaunerlpn@hotmail.com",
     "Phone":"(715) 212-1994"
     }
@@ -3608,7 +3609,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tammy Strehlow",
-    "Home Address":"N2396 Doering Dr Merrill WI 54452",
+    "Address":"N2396 Doering Dr Merrill WI 54452",
     "Email":"tammystrehlow@gmail.com",
     "Phone":"(715) 657-0259"
     }
@@ -3621,7 +3622,7 @@ var stores = {
     },
     "properties": {
     "Name":"Sabrina Burnett",
-    "Home Address":"3200 old winter rd apt 2314",
+    "Address":"3200 old winter rd apt 2314",
     "Email":"sabrinaburnett193@gmail.com",
     "Phone":"(321) 442-4571"
     }
@@ -3634,7 +3635,7 @@ var stores = {
     },
     "properties": {
     "Name":"Lisa Reyes",
-    "Home Address":"7405 Fargo Drive",
+    "Address":"7405 Fargo Drive",
     "Email":"l-d-reyes@hotmail.com",
     "Phone":"(361) 228-3591"
     }
@@ -3647,7 +3648,7 @@ var stores = {
     },
     "properties": {
     "Name":"Arijana ford",
-    "Home Address":"707 cheryl ann dr",
+    "Address":"707 cheryl ann dr",
     "Email":"arifordmt@gmail.com",
     "Phone":"(314) 299-3892"
     }
@@ -3660,7 +3661,7 @@ var stores = {
     },
     "properties": {
     "Name":"Valerie Pierre",
-    "Home Address":"8330 North Missionwood Circle Unit B-23",
+    "Address":"8330 North Missionwood Circle Unit B-23",
     "Email":"vpierre32@gmail.com",
     "Phone":"(954) 541-4496"
     }
@@ -3673,7 +3674,7 @@ var stores = {
     },
     "properties": {
     "Name":"Tina Plahuta",
-    "Home Address":"10223 Riverstone Circle",
+    "Address":"10223 Riverstone Circle",
     "Email":"tharrison821@hotmail.com",
     "Phone":"(502) 851-6131"
     }
@@ -3686,7 +3687,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jean Marino",
-    "Home Address":"8350 Savannah Trace Circle #1707",
+    "Address":"8350 Savannah Trace Circle #1707",
     "Email":"buggie12366@gmail.com",
     "Phone":"(813) 846-4439"
     }
@@ -3699,7 +3700,7 @@ var stores = {
     },
     "properties": {
     "Name":"Vanessa Cole",
-    "Home Address":"1670 village place circle",
+    "Address":"1670 village place circle",
     "Email":"Vanlyn331@hotmail.com",
     "Phone":"(678) 933-5602"
     }
@@ -3712,7 +3713,7 @@ var stores = {
     },
     "properties": {
     "Name":"Laurie Clark",
-    "Home Address":"343 Westford Circle",
+    "Address":"343 Westford Circle",
     "Email":"Lclark01@knology.net",
     "Phone":"(727) 773-7650"
     }
@@ -3725,7 +3726,7 @@ var stores = {
     },
     "properties": {
     "Name":"David Daniel Palmares Villarreal",
-    "Home Address":"1651 Sunblossom Circle",
+    "Address":"1651 Sunblossom Circle",
     "Email":"DAVID.PALMARES@HOTMAIL.COM",
     "Phone":"(830) 302-8603"
     }
@@ -3738,7 +3739,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jason Sutton",
-    "Home Address":"12813 Saddle Club Circle",
+    "Address":"12813 Saddle Club Circle",
     "Email":"Jsems79@gmail.com",
     "Phone":"(501) 551-6139"
     }
@@ -3751,7 +3752,7 @@ var stores = {
     },
     "properties": {
     "Name":"Ashley Crawford",
-    "Home Address":"2801 Northcote Dr",
+    "Address":"2801 Northcote Dr",
     "Email":"ashleyyr1197@gmail.com",
     "Phone":"(727) 412-4045"
     }
@@ -3764,7 +3765,7 @@ var stores = {
     },
     "properties": {
     "Name":"Elaine Rosaci",
-    "Home Address":"717 isar Ave nw",
+    "Address":"717 isar Ave nw",
     "Email":"erosaci@hotmail.com",
     "Phone":"(407) 417-3292"
     }
@@ -3777,7 +3778,7 @@ var stores = {
     },
     "properties": {
     "Name":"HEATHER BURCH-WICKER",
-    "Home Address":"2004 Ga Highway 315",
+    "Address":"2004 Ga Highway 315",
     "Email":"Hburch3004@charter.net",
     "Phone":"(706) 464-7474"
     }
@@ -3790,7 +3791,7 @@ var stores = {
     },
     "properties": {
     "Name":"Jessica Belekevich",
-    "Home Address":"2522 Oyster Catcher Ct apt 101 ",
+    "Address":"2522 Oyster Catcher Ct apt 101 ",
     "Email":"belekevichj@aol.com",
     "Phone":"(813) 367-6706"
     }
@@ -3835,6 +3836,7 @@ map.addLayer({
     'icon-allow-overlap': true,
   }
 });
+
 geocoder.on('result', function(ev) {
   var searchResult = ev.result.geometry;
   map.getSource('single-point').setData(searchResult);
@@ -3917,6 +3919,9 @@ function buildLocationList(data) {
     details.innerHTML = prop.Email;
     if (prop.Phone) {
       details.innerHTML += ' · ' + prop.Phone;
+    }
+    if (prop.Address) {
+      details.innerHTML += ' · ' + prop.Address;
     }
     if (prop.distance) {
     var roundedDistance = Math.round(prop.distance * 100) / 100;

@@ -1,0 +1,3991 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+    <script src="src/script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <img class="Logo" src="img/New Logo Full.png" alt="Logo">
+    </header>
+    <div class="nav">
+      <a href="index.html">Home</a>
+        <a href="event.html">Events</a>
+      <a class ="active"  href="technician.html">Technician</a>
+      </div>
+
+
+
+      <div class='sidebar'>
+      <div class='heading'>
+        <h1>Technicians</h1>
+      </div>
+      <div id='listings' class='listings'></div>
+    </div>
+      <div id='map' class='map pad2'></div>
+      <script type="text/javascript">
+        mapboxgl.accessToken = 'pk.eyJ1IjoibXN0ZWVsZTQxIiwiYSI6ImNqcXB6YjA2czA2ejUzd3BlN2puMmxlaWsifQ.681YjYdXM8j0cx0L9Wl3fA';
+  // This adds the map to your page
+  var map = new mapboxgl.Map({
+    // container id specified in the HTML
+    container: 'map',
+    // style URL
+    style: 'mapbox://styles/msteele41/cjqzlrevr26jl2sqh93q5zz5u',
+    // initial position in [lon, lat] format
+    center: [-94.012382, 37.325647],
+    // initial zoom
+    zoom: 3
+  });
+  var stores = {
+     "type": "FeatureCollection",
+     "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.720003,28.032539 ]
+      },
+      "properties": {
+      "Name":"Mark Gleason",
+      "Address":"1412 Glendale Ave NE",
+      "Email":"mgleason2@cfl.rr.com",
+      "Phone":"(321) 537-8674"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.547781,33.710668 ]
+      },
+      "properties": {
+      "Name":"Permecia Dixon",
+      "Address":"705 Lyon CT SW",
+      "Email":"permeciaw@gmail.com",
+      "Phone":"(404) 964-5034"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.174786,26.308492 ]
+      },
+      "properties": {
+      "Name":"Carmen Marchione",
+      "Address":"6353 NW 40th Ave",
+      "Email":"carmenjr@hotmail.com",
+      "Phone":"(954) 448-0548"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -104.726775,38.747389 ]
+      },
+      "properties": {
+      "Name":"Lenora Rowley",
+      "Address":"335 Tinkham ct",
+      "Email":"nonierowley3@yahoo.com",
+      "Phone":"(909) 973-1352"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.250209,34.794512 ]
+      },
+      "properties": {
+      "Name":"Brian Dunbaugh",
+      "Address":"dunbaugh@gmail.com",
+      "Email":"dunbaugh@gmail.com",
+      "Phone":"(864) 325-2435"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -104.694263,38.727484 ]
+      },
+      "properties": {
+      "Name":"Jane Hilton",
+      "Address":"7235 Fortman Ter",
+      "Email":"jehilty@msn.com",
+      "Phone":"(719) 339-3229"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -102.400225,31.943817 ]
+      },
+      "properties": {
+      "Name":"Natalia Kemp",
+      "Address":"301 Cabrillo Dr",
+      "Email":"nvfrech@hotmail.com",
+      "Phone":"(432) 214-3209"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.450913,28.576357 ]
+      },
+      "properties": {
+      "Name":"Joel Hazlett",
+      "Address":"2424 Queensway Rd",
+      "Email":"JoelAHazlett@icloud.com",
+      "Phone":"(407) 408-4510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.669055,26.192746 ]
+      },
+      "properties": {
+      "Name":"Irma Reyes",
+      "Address":"102 S 26th St",
+      "Email":"irmareyes2975@yahoo.com",
+      "Phone":"(1956) 622-8846"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.28592,26.233502 ]
+      },
+      "properties": {
+      "Name":"Robert Krebs",
+      "Address":"265 nw 119 lane",
+      "Email":"rwkrebs@att.net",
+      "Phone":"(954) 650-0587"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.203427,26.118904 ]
+      },
+      "properties": {
+      "Name":"Tyler Johnson",
+      "Address":"4042 sw 1st ST.",
+      "Email":"ty.johnson91@gmail.com",
+      "Phone":"(954) 798-5425"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.463108,30.325527 ]
+      },
+      "properties": {
+      "Name":"Shelia Rice DeLoach",
+      "Address":"13234 Joeandy Rd, N",
+      "Email":"toothru@hotmail.com",
+      "Phone":"(904) 234-1193"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.858204,30.20648 ]
+      },
+      "properties": {
+      "Name":"Stephen Ellis",
+      "Address":"8510 Barasinga Trl",
+      "Email":"sjellis23@gmail.com",
+      "Phone":"(512) 484-2296"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.71759,28.05355 ]
+      },
+      "properties": {
+      "Name":"Mark Snow",
+      "Address":"2900 Pinewwod Run",
+      "Email":"snoze2000@hotmail.com",
+      "Phone":"(727) 593-4303"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.00704,43.65833 ]
+      },
+      "properties": {
+      "Name":"KATHLEEN PEARCE",
+      "Address":"W6580 COUNTY ROAD V",
+      "Email":"kpear2002@yahoo.com",
+      "Phone":"(920) 946-1036"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.365623,27.69938 ]
+      },
+      "properties": {
+      "Name":"Joshua Rivas",
+      "Address":"752 villarreal",
+      "Email":"jrealist61@gmail.com",
+      "Phone":"(361) 597-7501"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.46263,29.776691 ]
+      },
+      "properties": {
+      "Name":"Abbey Jones",
+      "Address":"30831 Schlather Ln",
+      "Email":"abbeyelisejones@gmail.com",
+      "Phone":"(210) 913-5458"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.434776,33.558361 ]
+      },
+      "properties": {
+      "Name":"Amanda Cage",
+      "Address":"269 Lossie Lane",
+      "Email":"amandakcage@gmail.com",
+      "Phone":"(404) 447-7628"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.174786,26.308492 ]
+      },
+      "properties": {
+      "Name":"Michele Marchione",
+      "Address":"6353 NW 40th Ave",
+      "Email":"mmarchione@bellsouth.net",
+      "Phone":"(954) 448-0562"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.98765,30.361087 ]
+      },
+      "properties": {
+      "Name":"Tatiana Gilliam",
+      "Address":"911 Biscayne",
+      "Email":"jtgilliam@gmail.com",
+      "Phone":"(512) 791-8294"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.159293,29.985191 ]
+      },
+      "properties": {
+      "Name":"Lisa Buxton",
+      "Address":"3408 46TH ST",
+      "Email":"LMC040967@GMAIL.COM",
+      "Phone":"(504) 240-8334"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.102409,30.431011 ]
+      },
+      "properties": {
+      "Name":"Debra Walters",
+      "Address":"18316 Derbes Dr",
+      "Email":"medcollectemtp@yahoo.com",
+      "Phone":"(504) 428-1093"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.392777,38.737679 ]
+      },
+      "properties": {
+      "Name":"Ronald Hopper",
+      "Address":"944 W 2nd St",
+      "Email":"baronsnest@frontier.com",
+      "Phone":"(1812) 599-0770"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.930319,42.383938 ]
+      },
+      "properties": {
+      "Name":"Amy Bhandari",
+      "Address":"5151 Eau Claire Ct",
+      "Email":"amyglimane@yahoo.com",
+      "Phone":"(1773) 547-2464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.371607,27.767867 ]
+      },
+      "properties": {
+      "Name":"Emily Mahavong",
+      "Address":"6306 Voyagers Pl ",
+      "Email":"emahavong@yahoo.com",
+      "Phone":"(316) 371-3007"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.449214,27.753463 ]
+      },
+      "properties": {
+      "Name":"Ashley Montemayor",
+      "Address":"1732 Treyway Ln Apt C",
+      "Email":"amontemayor30@yahoo.com",
+      "Phone":"(361) 775-8629"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.380802,37.81641 ]
+      },
+      "properties": {
+      "Name":"Nora jones",
+      "Address":"119  Ashberry  dr",
+      "Email":"caldwell75rebe48@yahoo.com",
+      "Phone":"(502) 510-0100"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.895378,37.69617 ]
+      },
+      "properties": {
+      "Name":"Anthony Noce",
+      "Address":"102 Thomas shaun Ct",
+      "Email":"anthony.noce07@yahoo.com",
+      "Phone":"(270) 401-8049"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.929477,27.962708 ]
+      },
+      "properties": {
+      "Name":"ricquia Ross",
+      "Address":"1912 Suzanne Lane",
+      "Email":"ricquiaross@gmail.com",
+      "Phone":"(863) 220-4039"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.450913,28.576357 ]
+      },
+      "properties": {
+      "Name":"JOANNE HAZLETT",
+      "Address":"2424 QUEENSWAY ROAD",
+      "Email":"joannedhazlett@icloud.com",
+      "Phone":"(407) 484-0199"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.460845,25.699238 ]
+      },
+      "properties": {
+      "Name":"Eduardo Montserrat",
+      "Address":"7113 SW 165th AV .Miami FL. 33193",
+      "Email":"emontserrat@hotmail.com",
+      "Phone":"(786) 489-8110"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.460845,25.699238 ]
+      },
+      "properties": {
+      "Name":"Felipe Montserrat",
+      "Address":"7113 SW 165th AVE Miami FL 33193",
+      "Email":"femc.85@gmail.com",
+      "Phone":"(786) 554-8465"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.460845,25.699238 ]
+      },
+      "properties": {
+      "Name":"Yulli Montserrat",
+      "Address":"7113 SW 165th AVE Miami FL 33193",
+      "Email":"yulli_montserrat@hotmail.com",
+      "Phone":"(786) 271-7908"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.216767,25.990802 ]
+      },
+      "properties": {
+      "Name":"MARIE ST GERMAIN",
+      "Address":"6436 SW 22ND STREET MIRAMAR FL 33023",
+      "Email":"msgnurse@hotmai.com",
+      "Phone":"(954) 288-9468"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.145999,26.105398 ]
+      },
+      "properties": {
+      "Name":"Jennifer Neely",
+      "Address":"308 SW 13th street fort lauderdale FL 33315",
+      "Email":"jneely0727@gmail.com",
+      "Phone":"(772) 919-5091"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.206195,26.118687 ]
+      },
+      "properties": {
+      "Name":"Jason Santana",
+      "Address":"4331 SW 2 Ct Plantation, Fl 33317",
+      "Email":"jays36@yahoo.com",
+      "Phone":"(305) 469-7907"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.270085,26.156182 ]
+      },
+      "properties": {
+      "Name":"Kelly Barreto-Frie",
+      "Address":"9021 NW 25th Street Sunrise FL 33322",
+      "Email":"kfrie83@gmail.com",
+      "Phone":"(305) 815-2770"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.223439,26.19914 ]
+      },
+      "properties": {
+      "Name":"MONICA WILLIAMS",
+      "Address":"5973 NW 54TH LANE, TAMARAC, FL 33319",
+      "Email":"Emon511@hotmail.com",
+      "Phone":"(954) 253-0304"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.176271,26.22362 ]
+      },
+      "properties": {
+      "Name":"Olena Kuzmenko",
+      "Address":"3900 Oaks Clubhouse Dr, apt 109, Pompano Beach, Fl 33069 ",
+      "Email":"k.lena06@gmail.com",
+      "Phone":"(786) 357-5918"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.106242,26.226079 ]
+      },
+      "properties": {
+      "Name":"Sara Tovar",
+      "Address":"526 Mar Cir Alamo Texas ",
+      "Email":"saragoya@hotmail.com",
+      "Phone":"(302) 463-4390"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.438791,26.273551 ]
+      },
+      "properties": {
+      "Name":"Nancy Garcia",
+      "Address":"3101 Ozuna St. Penitas, TX 78576",
+      "Email":"nancygarcia1@hotmail.com",
+      "Phone":"(956) 379-1474"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.15674,26.296709 ]
+      },
+      "properties": {
+      "Name":"nil leone",
+      "Address":"809 republic ct deerfield beach fl 33442",
+      "Email":"nile.leone@gmail.com",
+      "Phone":"(561) 255-5015"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.133508,26.666644 ]
+      },
+      "properties": {
+      "Name":"katharine marshall",
+      "Address":"757 belmont drive west palm beach fl 33415",
+      "Email":"kem_30328@yahoo.com",
+      "Phone":"(404) 357-5756"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.1422,26.731308 ]
+      },
+      "properties": {
+      "Name":"Alicia Grugett",
+      "Address":"3648 Turtle Island Ct, West Palm Beach, FL 33411",
+      "Email":"agrugett@hotmail.com",
+      "Phone":"(404) 312-9949"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.439892,27.111931 ]
+      },
+      "properties": {
+      "Name":"Angels Beichley",
+      "Address":"738 Bird Bay Circle, Venice, FL 34285",
+      "Email":"ambeichley@gmail.com",
+      "Phone":"(256) 238-3419"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.241174,27.612563 ]
+      },
+      "properties": {
+      "Name":"Gabriela Laurel",
+      "Address":"13522 Carlos Fifth Ct. Corpus Christi, Tx. 78418",
+      "Email":"brie.sapien22@yahoo.com",
+      "Phone":"(361) 947-3355"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.635778,27.750274 ]
+      },
+      "properties": {
+      "Name":"Jennifer Nicholson",
+      "Address":"210 20th avenue south St Petersburg Florida 33705",
+      "Email":"jennifernicholson93@yahoo.com",
+      "Phone":"(813) 816-6698"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.323816,27.819182 ]
+      },
+      "properties": {
+      "Name":"Janice Fewlass",
+      "Address":"11202 Spring Point Circle, Riverview, FL 33579",
+      "Email":"janice.fewlass@hotmail.com",
+      "Phone":"(937) 238-5694"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.823852,27.830534 ]
+      },
+      "properties": {
+      "Name":"Gail Gail",
+      "Address":"139 Wall St.  Redington Shores, FL. 33708",
+      "Email":"gail2x@aol.com",
+      "Phone":"(727) 688-8113"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.57314,27.831499 ]
+      },
+      "properties": {
+      "Name":"Sheri Campos",
+      "Address":"10509 Hemlock Rd, Corpus Christi, TX. 78410",
+      "Email":"shericampos@sbcglobal.net",
+      "Phone":"(361) 813-6147"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.821729,27.852968 ]
+      },
+      "properties": {
+      "Name":"Ryan Pierce",
+      "Address":"13237 87th Place N. Seminole FL, 33776",
+      "Email":"ryanpierce28@yahoo.com",
+      "Phone":"(305) 731-6592"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.251883,27.873914 ]
+      },
+      "properties": {
+      "Name":"karen joseph",
+      "Address":"4407 Kendal Court Valrico Fl 33596",
+      "Email":"karenjoseph@mac.com",
+      "Phone":"(813) 629-4469"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.486221,27.888227 ]
+      },
+      "properties": {
+      "Name":"Alexis Litchfield",
+      "Address":"5221 Bayshore Blvd. Apt 58. Tampa, FL. 33611",
+      "Email":"litchfield.alexis@gmail.com",
+      "Phone":"(813) 335-9475"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.523808,27.901466 ]
+      },
+      "properties": {
+      "Name":"Tamara Lanza",
+      "Address":"4713 west lawn ave tampa Florida 33611",
+      "Email":"tamara_lanza@yahoo.com",
+      "Phone":"(813) 599-1131"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.657043,27.909745 ]
+      },
+      "properties": {
+      "Name":"Audrey Kesner",
+      "Address":"13572 Feather Sound Cir W apt 1914",
+      "Email":"audreykesner@gmail.com",
+      "Phone":"(567) 712-9634"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.657043,27.909745 ]
+      },
+      "properties": {
+      "Name":"Audrey Kesner",
+      "Address":"13572 Feather Sound Cir W apt 1914",
+      "Email":"audreykesner@gmail.com",
+      "Phone":"(567) 712-9634"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.78212,27.915774 ]
+      },
+      "properties": {
+      "Name":"Eleanor Levy",
+      "Address":"501 East Bay Dr Apt 1103 largo, fl 33770",
+      "Email":"ellymaelevy@hotmail.com",
+      "Phone":"(727) 686-6386"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.652263,27.91852 ]
+      },
+      "properties": {
+      "Name":"Ingrid Loesener",
+      "Address":"3049 Oakwood Ave SE Palm Bay, Fl. 32909",
+      "Email":"ingridloesener@gmail.com",
+      "Phone":"(321) 514-2956"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.836514,27.943458 ]
+      },
+      "properties": {
+      "Name":"Kristi Johnson",
+      "Address":"1480 Gulf Blvd. #1008 Clearwater Beach, FL 33767",
+      "Email":"kristijrn@Me.com",
+      "Phone":"(571) 606-2053"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.732052,27.945325 ]
+      },
+      "properties": {
+      "Name":"Cortney Nordblom",
+      "Address":"2557 Harn Blvd unit 2 Clearwater, FL 33764",
+      "Email":"cortneyamber85@gmail.com",
+      "Phone":"(727) 648-7640"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.516111,27.960295 ]
+      },
+      "properties": {
+      "Name":"Jimmy Krastz",
+      "Address":"4221 W Spruce St #1121 Tampa FL 33607",
+      "Email":"jkrastz@yahoo.com",
+      "Phone":"(813) 808-0725"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.929514,27.962633 ]
+      },
+      "properties": {
+      "Name":"ricquia Ross",
+      "Address":"1912 Suzanne Lane Lakeland, FL  33813",
+      "Email":"ricquiaross@gmail.com",
+      "Phone":"(863) 220-4039"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.867153,27.964651 ]
+      },
+      "properties": {
+      "Name":"Chrisanne Rhodes",
+      "Address":"197 highland terrace ",
+      "Email":"chrissyerhodes@yahoo.com",
+      "Phone":"(832) 360-6950"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.762456,27.987284 ]
+      },
+      "properties": {
+      "Name":"Elka Mcardle",
+      "Address":"Winter Haven Florida",
+      "Email":"elka_j_mc311971@msn.com",
+      "Phone":"(813) 957-1207"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.700476,27.990402 ]
+      },
+      "properties": {
+      "Name":"Kimberly Armitage",
+      "Address":"110 12th Ave. S., Safety Harbor, FL 34695",
+      "Email":"ksa811@yahoo.com",
+      "Phone":"(727) 688-5159"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.47708,27.991986 ]
+      },
+      "properties": {
+      "Name":"Sherri Santos",
+      "Address":"1706 W Bedingfield Drive Tampa Fl 33603",
+      "Email":"sherri33603@yahoo.com",
+      "Phone":"(813) 431-3257"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.730137,28.044423 ]
+      },
+      "properties": {
+      "Name":"Daniel Lopez",
+      "Address":"29772 66st n Clearwater fl 33761",
+      "Email":"dlmadrid77@gmail.com",
+      "Phone":"(727) 686-9850"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.696829,28.103858 ]
+      },
+      "properties": {
+      "Name":"Scott Sanborn",
+      "Address":"3604 Fairway Forest Dr. Palm Harbor, Fl. 34685",
+      "Email":"thestripeguy@tampabay.rr.com",
+      "Phone":"(954) 695-9518"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.438961,28.139328 ]
+      },
+      "properties": {
+      "Name":"Rylea Carver",
+      "Address":"18413 sterling silver circle lutz Florida 33549",
+      "Email":"ryleafromlutz@gmail.com",
+      "Phone":"(813) 406-9745"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.438961,28.139328 ]
+      },
+      "properties": {
+      "Name":"Denege Carver",
+      "Address":"18413 Sterling Silver Cir Lutz, Florida 33549",
+      "Email":"negefromlutz@gmail.com",
+      "Phone":"(813) 629-5519"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.512788,28.210235 ]
+      },
+      "properties": {
+      "Name":"Kerri Nuccio",
+      "Address":"3684 Tuckerton Dr Land O Lakes 34638",
+      "Email":"knucciorn@gmail.com",
+      "Phone":"(502) 599-9278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.421351,28.213734 ]
+      },
+      "properties": {
+      "Name":"James Cherry",
+      "Address":"23841 Forest View Drive Land O Lakes, Fl. 34639",
+      "Email":"resqman23@yahoo.com",
+      "Phone":"(772) 985-3608"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.622501,28.267122 ]
+      },
+      "properties": {
+      "Name":"Denise Hondros",
+      "Address":"1357 Venezia Court Unit 404 Davenport Florida 33896",
+      "Email":"dstrickland1215@yahoo.com",
+      "Phone":"(614) 633-5790"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.365214,28.422726 ]
+      },
+      "properties": {
+      "Name":"Linda Weese",
+      "Address":"9909 4th Ave., Orlando, Fl. 32824",
+      "Email":"LWeese9951@aol.com",
+      "Phone":"(407) 538-1398"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.415066,28.492039 ]
+      },
+      "properties": {
+      "Name":"Mengy Germain",
+      "Address":"5144 CITY ST unit 226, orlando, fl 32839",
+      "Email":"mengygermain@gmail.com",
+      "Phone":"(407) 501-9076"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.492911,28.503403 ]
+      },
+      "properties": {
+      "Name":"michelle ingram",
+      "Address":"3446 bellington drive orlando fl 32835",
+      "Email":"mmichelleingram@gmail.com",
+      "Phone":"(561) 313-2101"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.429721,28.613553 ]
+      },
+      "properties": {
+      "Name":"Giselle Curiel",
+      "Address":"4097 Clarcona Ocoee Road Orlando, FL",
+      "Email":"giselle-c@hotmail.com",
+      "Phone":"(497) 910-3666"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.47667,28.703673 ]
+      },
+      "properties": {
+      "Name":"Jeanette Nation",
+      "Address":"1325 Branch Hill Court.  APOPKA, FL 32712",
+      "Email":"Jnation3@cfl.rr.com",
+      "Phone":"(407) 620-8278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.717365,29.412143 ]
+      },
+      "properties": {
+      "Name":"Sylvia Banda",
+      "Address":"11327 Camp Creek Trail San Antonio Tx 78245",
+      "Email":"silcrisb@aol.com",
+      "Phone":"(956) 369-9504"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.421697,29.443371 ]
+      },
+      "properties": {
+      "Name":"Tandra Brus",
+      "Address":"3414 Lake Ct. Rosharon Tx 77583 ",
+      "Email":"tandrabrus@gmail.com",
+      "Phone":"(817) 243-9501"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.372051,29.494913 ]
+      },
+      "properties": {
+      "Name":"Regina Brantley",
+      "Address":"7126 hibiscus falls, San Antonio, Tx 78218",
+      "Email":"reginabran05@yahoo.com",
+      "Phone":"(360) 610-3248"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.32383,29.504848 ]
+      },
+      "properties": {
+      "Name":"Maria Del Bosque",
+      "Address":"8042 Swindow Circle Converse Tx 78109",
+      "Email":"marydelbosque956@yahoo.com",
+      "Phone":"(210) 712-8252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.404419,29.510036 ]
+      },
+      "properties": {
+      "Name":"Chiniqua(Nikki) Limbrick",
+      "Address":"221 Rodeo dr manvel tx 77578",
+      "Email":"chiniqual@yahoo.com",
+      "Phone":"(832) 970-3861"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.317278,29.526064 ]
+      },
+      "properties": {
+      "Name":"Letitia Durant",
+      "Address":"9806 N. Meadow St. Converse, TX 78109",
+      "Email":"kianeshiau@yahoo.com",
+      "Phone":"(248) 778-7123"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.317278,29.526064 ]
+      },
+      "properties": {
+      "Name":"Letitia Durant",
+      "Address":"9806 N. Meadow St., Converse, TX 78109",
+      "Email":"kianeshiau@yahoo.com",
+      "Phone":"(248) 778-7123"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.109838,29.566774 ]
+      },
+      "properties": {
+      "Name":"Cheryl Link",
+      "Address":"2001 Gemini St. Apt. 1610 Houston,TX 77058",
+      "Email":"ciink53@aol.com",
+      "Phone":"(281) 614-9273"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.44029,29.573241 ]
+      },
+      "properties": {
+      "Name":"Glenda Plasentillo",
+      "Address":"3110 Thousand Oaks dr apt 915 San Antonio Texas 78247",
+      "Email":"glenda_hope47@yahoo.com",
+      "Phone":"(210) 316-9359"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.08685,29.665431 ]
+      },
+      "properties": {
+      "Name":"Sylvia Aguilar",
+      "Address":"239 global drive New Braunfels TX",
+      "Email":"sil672003@uahoo.com",
+      "Phone":"(830) 215-5355"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.481503,29.684833 ]
+      },
+      "properties": {
+      "Name":"Hazelann (Ann) LeMaster",
+      "Address":"903 Ridge Cloud, San Antonio, TX, 78260",
+      "Email":"annlemaster@yahoo.com",
+      "Phone":"(972) 948-9976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.483166,29.69547 ]
+      },
+      "properties": {
+      "Name":"Donna Bodiford",
+      "Address":"26615 Snuggle Valley, San Antonio, TX 78260",
+      "Email":"dbodiford@satx.rr.com",
+      "Phone":"(210) 215-3195"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.483166,29.69547 ]
+      },
+      "properties": {
+      "Name":"Donna Bodiford",
+      "Address":"26615 Snuggle Valley, San Antonio, TX 78260",
+      "Email":"dbodiford@satx.rr.com",
+      "Phone":"(210) 215-3195"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.568347,29.711223 ]
+      },
+      "properties": {
+      "Name":"Sandra Brooks",
+      "Address":"6314 Gladewell Drive Houston TX 77072",
+      "Email":"brsugahbaby@gmail.com",
+      "Phone":"(832) 978-8538"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.994123,29.733283 ]
+      },
+      "properties": {
+      "Name":"Shanequa Birdow",
+      "Address":"7011 Micayla cove",
+      "Email":"sbirdow@yahoo.com",
+      "Phone":"(817) 366-8695"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.887726,29.918269 ]
+      },
+      "properties": {
+      "Name":"Kortney Kent",
+      "Address":"158 Bandera St, San Marcos, TX 78666",
+      "Email":"kortneykent@gmail.com",
+      "Phone":"(512) 648-9552"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.694284,29.98275 ]
+      },
+      "properties": {
+      "Name":"Quintesha James",
+      "Address":"14619 Hazy Ridge Ln Cypress,TX 77429",
+      "Email":"quintesha_j@yahoo.com",
+      "Phone":"(936) 900-2081"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.485982,30.062866 ]
+      },
+      "properties": {
+      "Name":"Lori Ellis",
+      "Address":"228 Spruce St. LaPlace La 70068",
+      "Email":"loriellis411@gmail.com",
+      "Phone":"(1504) 319-4950"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.117994,30.120621 ]
+      },
+      "properties": {
+      "Name":"Maresha Moore",
+      "Address":"1960 Pierce St Beaumont, TX 77703",
+      "Email":"maresha.moore@gmail.com",
+      "Phone":"(713) 294-2174"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -92.015684,30.15652 ]
+      },
+      "properties": {
+      "Name":"Laura Leonard",
+      "Address":"403 North Michot Road, Lafayette, LA 70508",
+      "Email":"lauraleonard1987@gmail.com",
+      "Phone":"(337) 280-7964"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.488706,30.178367 ]
+      },
+      "properties": {
+      "Name":"Laura Sajatovic",
+      "Address":"38 Pebble Hollow Ct., Spring, TX, 77381",
+      "Email":"laurasajatovic@gmail.com",
+      "Phone":"(704) 651-7547"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.541416,30.2272 ]
+      },
+      "properties": {
+      "Name":"Veronica Skrine",
+      "Address":"300 Enclave Drive #3416 Conroe, TX, 77384",
+      "Email":"vskrine4hwp@outlook.com",
+      "Phone":"(832) 398-5710"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.920805,30.249582 ]
+      },
+      "properties": {
+      "Name":"Barbara Wearing",
+      "Address":"7511 Thomas Springs Rd Apt. A Austin, TX 78736",
+      "Email":"bwearing@msn.com",
+      "Phone":"(512) 905-6922"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.540115,30.365446 ]
+      },
+      "properties": {
+      "Name":"Ashley Morales",
+      "Address":"4664 Pecan St",
+      "Email":"ashleysworld00@yahoo.com",
+      "Phone":"(504) 931-2117"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.700492,30.387534 ]
+      },
+      "properties": {
+      "Name":"Nathan Patrick",
+      "Address":"11207 Sage Hollow Drive, Austin, TX 78758",
+      "Email":"nathangpatrick@gmail.com",
+      "Phone":"(682) 597-4950"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.700492,30.387534 ]
+      },
+      "properties": {
+      "Name":"Nathan Patrick",
+      "Address":"11207 Sage Hollow Drive, Austin, TX 78758",
+      "Email":"nathangpatrick@gmail.com",
+      "Phone":"(682) 597-4950"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -91.006339,30.387696 ]
+      },
+      "properties": {
+      "Name":"Candice Carr",
+      "Address":"7103 Belle Christi Dr.  BR, LA 70817",
+      "Email":"candysmithcarr@gmail.com",
+      "Phone":"(225) 954-1534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.694196,30.400382 ]
+      },
+      "properties": {
+      "Name":"Misty Wilson",
+      "Address":"1603 Garnaas Dr, Austin, TX 78758",
+      "Email":"mmwilson0103@gmail.com",
+      "Phone":"(512) 429-3010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.615926,30.417489 ]
+      },
+      "properties": {
+      "Name":"Jeremy Jenkins-Lampert",
+      "Address":"20 Maples St NW fort walton beach fl 32548",
+      "Email":"JeremyJenkinsLampert@kw.com",
+      "Phone":"(321) 412-2980"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.903867,30.658239 ]
+      },
+      "properties": {
+      "Name":"Carrie Patrick",
+      "Address":"234 Sun Dr",
+      "Email":"ccornelius360@gmail.com",
+      "Phone":"(1601) 624-9738"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -98.568096,30.69913 ]
+      },
+      "properties": {
+      "Name":"Alicia Collins",
+      "Address":"7950 E. Hwy 71, Llano, TX 78643",
+      "Email":"aliciac_7@hotmail.com",
+      "Phone":"(830) 596-3819"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -91.798717,30.863437 ]
+      },
+      "properties": {
+      "Name":"Maria Gutierrez",
+      "Address":"2501 N. Louisiana Ave. Apt 08",
+      "Email":"mariagtz24@hotmail.com",
+      "Phone":"(956) 635-3377"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.787819,31.106569 ]
+      },
+      "properties": {
+      "Name":"Cardelia Haynes",
+      "Address":"4108 Bull Run Dr Killeen TX 76549",
+      "Email":"cdhaynes04@yahoo.com",
+      "Phone":"(254) 245-2565"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.731333,31.411848 ]
+      },
+      "properties": {
+      "Name":"Robyn Campbell",
+      "Address":"300 River Place West, Gatesville, Texas 76528",
+      "Email":"robyn.gogreen@aol.com",
+      "Phone":"(254) 216-0122"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -92.683482,31.50573 ]
+      },
+      "properties": {
+      "Name":"Katherine Oliveaux",
+      "Address":"301 McNeely Road Apt 2E",
+      "Email":"koliveaux@outlook.com",
+      "Phone":"(1601) 501-9708"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -92.683482,31.50573 ]
+      },
+      "properties": {
+      "Name":"Katherine Oliveaux",
+      "Address":"301 McNeely Road Apt 2E",
+      "Email":"koliveaux@outlook.com",
+      "Phone":"(1601) 501-9708"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.235467,31.984545 ]
+      },
+      "properties": {
+      "Name":"Anita Smith",
+      "Address":"21 Club House Drive, Savannah, Georgia 31419",
+      "Email":"goldies70@hotmail.com",
+      "Phone":"(912) 980-9049"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.235467,31.984545 ]
+      },
+      "properties": {
+      "Name":"Anita Smith",
+      "Address":"21 Club House Drive, Savannah, Georgia 31419",
+      "Email":"goldies70@hotmail.com",
+      "Phone":"(912) 980-9049"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.25482,32.127674 ]
+      },
+      "properties": {
+      "Name":"Gloria West",
+      "Address":"212 Durham Park Way Pooler, Ga 31322",
+      "Email":"moosegkw@yahoo.cm",
+      "Phone":"(912) 312-9131"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -110.97724,32.128926 ]
+      },
+      "properties": {
+      "Name":"Rosie Lopez",
+      "Address":"6771 S 12th Ave, Tucson, AZ 85756",
+      "Email":"rvl729@yahoo.com",
+      "Phone":"(520) 909-5603"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -96.338746,32.165005 ]
+      },
+      "properties": {
+      "Name":"Jane Reynolds",
+      "Address":"205 Roger Powell rd",
+      "Email":"jaokes@yahoo.com",
+      "Phone":"(812) 459-2447"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -110.876793,32.227555 ]
+      },
+      "properties": {
+      "Name":"Cynthea Cameron",
+      "Address":"5425 E Holmes St  Tucson, AZ 85711",
+      "Email":"contactcynthea@gmail.com",
+      "Phone":"(520) 991-3365"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.206908,32.342079 ]
+      },
+      "properties": {
+      "Name":"Shaun Bennett West",
+      "Address":"1835 TJ Roberts Dr Jackson, MS 39213",
+      "Email":"shaunbennwes@live.com",
+      "Phone":"(678) 761-0275"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.32868,32.3432 ]
+      },
+      "properties": {
+      "Name":"Kristen Ide",
+      "Address":"11968 E Lake Cir",
+      "Email":"kristen.ide@sbcglobal.net",
+      "Phone":"(773) 220-0919"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.122596,32.37317 ]
+      },
+      "properties": {
+      "Name":"Brittany Patrick",
+      "Address":"234 Sun Dr Jackson, MS 39212",
+      "Email":"Brittanypatrick4@gmail.com",
+      "Phone":"(601) 850-8094"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.122596,32.37317 ]
+      },
+      "properties": {
+      "Name":"Brittany Patrick",
+      "Address":"234 Sun Dr Jackson, MS 39211",
+      "Email":"brittanypatrick4@gmail.com",
+      "Phone":"(601) 850-8094"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.181456,32.374992 ]
+      },
+      "properties": {
+      "Name":"Jennifer Johnson (Huyck)",
+      "Address":"3051 Ebenezer Rd, Rincon Ga 31326",
+      "Email":"jenifer.huyck@gmail.com",
+      "Phone":"(912) 644-0218"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -111.212536,32.438397 ]
+      },
+      "properties": {
+      "Name":"Gary Davis",
+      "Address":"11600 W Emmer Drive Marana, AZ 85653",
+      "Email":"garydinsf@yahoo.com",
+      "Phone":"(520) 271-9642"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -93.809065,32.451294 ]
+      },
+      "properties": {
+      "Name":"Ella Jones",
+      "Address":"4258 Joe Louis Street Shreveport,LA 71109",
+      "Email":"jonesella794@gmail.com",
+      "Phone":"(318) 218-0505"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -93.778158,32.465372 ]
+      },
+      "properties": {
+      "Name":"DeAnna Hood",
+      "Address":"2619 Vivian St Shreveport,LA 71108",
+      "Email":"deanna_deshun@hotmail.com",
+      "Phone":"(318) 946-0965"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.199991,32.509062 ]
+      },
+      "properties": {
+      "Name":"PHALON N BELL",
+      "Address":"6003 Kings Way Walk",
+      "Email":"phalonbell18@gmail.com",
+      "Phone":"(678) 314-5493"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.456388,32.509226 ]
+      },
+      "properties": {
+      "Name":"Janet Anthony",
+      "Address":"1745 Barbara Ct   Hideaway, Texas 75771",
+      "Email":"rupejan@gmail.com",
+      "Phone":"(903) 920-4815"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.868776,32.539286 ]
+      },
+      "properties": {
+      "Name":"Tina Platter",
+      "Address":"665 Sides Circle Canton, Texas 75103",
+      "Email":"tinaplatter@yahoo.com",
+      "Phone":"(903) 408-0333"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.03314,32.744024 ]
+      },
+      "properties": {
+      "Name":"Irina Gleyzer",
+      "Address":"22614 Vistawood Way",
+      "Email":"irinag724@gmail.com",
+      "Phone":"(954) 401-4015"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.03314,32.744024 ]
+      },
+      "properties": {
+      "Name":"Jen Bradshaw",
+      "Address":"16222 S 34th Way",
+      "Email":"jenniebrat@gmail.com",
+      "Phone":"(860) 982-8456"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.03314,32.744024 ]
+      },
+      "properties": {
+      "Name":"Missy Mann",
+      "Address":"7000 Meihaus Way",
+      "Email":"missycammuse@yahoo.com",
+      "Phone":"(502) 224-1911"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.2455,32.751608 ]
+      },
+      "properties": {
+      "Name":"Carolyn Lozoya",
+      "Address":"1900 Tierney rd Fort Worth Texas 76112",
+      "Email":"cmooredr2@yahoo.com",
+      "Phone":"(682) 206-8952"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -83.783566,32.857803 ]
+      },
+      "properties": {
+      "Name":"Lisa Conklin",
+      "Address":"1001 Santa Fe Trl, Macon, GA 31220",
+      "Email":"conklinlisa@bellsouth.net",
+      "Phone":"(678) 612-4870"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -83.735304,32.907304 ]
+      },
+      "properties": {
+      "Name":"Nancy Jones",
+      "Address":"1091 Overlook Parkway Apt 815 Macon Ga 31210",
+      "Email":"ndavis_love@yahoo.com",
+      "Phone":"(678) 613-4492"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -117.15058,32.912703 ]
+      },
+      "properties": {
+      "Name":"Carmel Desir",
+      "Address":"1801 London Crest dr apt 209",
+      "Email":"carmel.desir@gmail.com",
+      "Phone":"(407) 334-5350"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -102.41602,32.91537 ]
+      },
+      "properties": {
+      "Name":"Saud Alezzi",
+      "Address":"12060 Meadow Bend Loop APT 404",
+      "Email":"dr.saoudalizzi@gmail.com",
+      "Phone":"(917) 294-5805"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -102.41602,32.91537 ]
+      },
+      "properties": {
+      "Name":"Rolonda Bixby",
+      "Address":"8950 Moonlit Meadows Loop",
+      "Email":"ronibixby@gmail.com",
+      "Phone":"(813) 270-7690"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.853487,33.198544 ]
+      },
+      "properties": {
+      "Name":"Laura Regina",
+      "Address":"7215 9th Avenue West",
+      "Email":"lauraregina46@gmail.com",
+      "Phone":"(1941) 713-2727"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.455785,33.222618 ]
+      },
+      "properties": {
+      "Name":"Shanon Meza",
+      "Address":"505 Cornhusker Rd",
+      "Email":"shanonx4@gmail.com",
+      "Phone":"(402) 980-9590"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.901975,33.266341 ]
+      },
+      "properties": {
+      "Name":"Yessenia Robles",
+      "Address":"2401 helena ave",
+      "Email":"yvrobles91@gmail.com",
+      "Phone":"(956) 534-6053"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.292138,33.278376 ]
+      },
+      "properties": {
+      "Name":"Patricia Ward",
+      "Address":"1016 Crossings Place, Griffin, GA 30223",
+      "Email":"schro66@hotmail.com",
+      "Phone":"(470) 246-2586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -111.988113,33.303152 ]
+      },
+      "properties": {
+      "Name":"Michelle Estrada",
+      "Address":"4411 E. Chandler blvd apt.2081 phoenix, az 85048",
+      "Email":"mestrada8200@yahoo.com",
+      "Phone":"(602) 214-5893"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.999356,33.323975 ]
+      },
+      "properties": {
+      "Name":"Joanne Lendor-Oliver",
+      "Address":"4348 Big Dipper Circle  Hephzibah, GA 30815",
+      "Email":"j.lendoroliver@gmail.com",
+      "Phone":"(706) 832-3840"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -111.992215,33.350738 ]
+      },
+      "properties": {
+      "Name":"Maria Campbell",
+      "Address":"4222 E. San Gabriel Ave Phoenix, AZ 85044",
+      "Email":"mcaz1112@gmail.com",
+      "Phone":"(1480) 628-1842"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.890335,33.412864 ]
+      },
+      "properties": {
+      "Name":"Tanesha Stubbs",
+      "Address":"516 Grove Street North",
+      "Email":"taneshastubbs21@yahoo.com",
+      "Phone":"(850) 368-6518"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -102.152158,33.412965 ]
+      },
+      "properties": {
+      "Name":"Mary Anne Martinez",
+      "Address":"405 Ranch Road Ropesville Tx 79358",
+      "Email":"mamkenedy1@gmail.com",
+      "Phone":"(80) 689-1288"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.018438,33.432068 ]
+      },
+      "properties": {
+      "Name":"Tiffani Davis",
+      "Address":"2202 Bungalow Rd, Augusta, GA 30906",
+      "Email":"tiffani_murff@hotmail.com",
+      "Phone":"(504) 610-1547"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.043725,33.433792 ]
+      },
+      "properties": {
+      "Name":"Beverly Ferguson",
+      "Address":"1019 Murrell Block Drive, Pineville, SC 29468",
+      "Email":"fbeverly763@gmail.com",
+      "Phone":"(803) 645-7437"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -112.372635,33.469683 ]
+      },
+      "properties": {
+      "Name":"Christine Keogh",
+      "Address":"2100 N 145th Ave Apt 1032 Goodyear AZ 85395",
+      "Email":"chkeo1@gmail.com",
+      "Phone":"(224) 545-1023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -112.396992,33.470785 ]
+      },
+      "properties": {
+      "Name":"Pamela Lloyd",
+      "Address":"15683 W. Vernon Ave, Goodyear, Az 85395",
+      "Email":"mnmedlink@aol.com",
+      "Phone":"(1623) 243-9287"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -111.894614,33.498591 ]
+      },
+      "properties": {
+      "Name":"Diane swanberg",
+      "Address":"8627 E Montecito Ave Scottsdale, AZ 85251",
+      "Email":"dianeswanberg@gmail.com",
+      "Phone":"(602) 680-6378"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.169967,33.502541 ]
+      },
+      "properties": {
+      "Name":"Shante Mathis",
+      "Address":"489 Astoria Way Mcdonough, Ga 30253",
+      "Email":"sarmstrong04@bellsouth.net",
+      "Phone":"(770) 875-6185"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.395854,33.521902 ]
+      },
+      "properties": {
+      "Name":"Roslyn Bradley",
+      "Address":"151 Peartree ln Riverdale GA 30274",
+      "Email":"bradleyroslyn202@yahoo.com",
+      "Phone":"(678) 900-5742"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.045172,33.561135 ]
+      },
+      "properties": {
+      "Name":"Elizabeth Davies",
+      "Address":"131 Amberwood Circle Conyers, GA 30094",
+      "Email":"ansley_davies@yahoo.com",
+      "Phone":"(678) 373-5737"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.034648,33.568843 ]
+      },
+      "properties": {
+      "Name":"Erin Woehler",
+      "Address":"1108 Plantation Dr SE Conyers,Ga 30094",
+      "Email":"enoelle2015@gmail.com",
+      "Phone":"(770) 827-5329"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.773412,33.589405 ]
+      },
+      "properties": {
+      "Name":"Tonia Dairon",
+      "Address":"2152 Belford Grove Drive #204 Aiken, South Carolina 29801",
+      "Email":"tdairon@yahoo.com",
+      "Phone":"(803) 617-9378"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.10204,33.61571 ]
+      },
+      "properties": {
+      "Name":"Josephine Ramos",
+      "Address":"245 114th ave North  unit 1",
+      "Email":"josephineramos90@gmail.com",
+      "Phone":"(1727) 692-5192"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.10204,33.61571 ]
+      },
+      "properties": {
+      "Name":"Shelia Rice DeLoach",
+      "Address":"13234 Joeandy Rd. North",
+      "Email":"toothru@hotmail.com",
+      "Phone":"(904) 234-1192"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -83.968359,33.643597 ]
+      },
+      "properties": {
+      "Name":"Brittany Richardson",
+      "Address":"2632 Essex Ct Conyers Ga 30013",
+      "Email":"brittanyrichardson28@gmail.com",
+      "Phone":"(989) 397-6116"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.192358,33.694141 ]
+      },
+      "properties": {
+      "Name":"Tameka Colbert",
+      "Address":"3093 Roseheath Ct. Lithonia, GA 30038",
+      "Email":"tameka.colbert1@gmail.com",
+      "Phone":"(706) 573-3341"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -112.202391,33.748525 ]
+      },
+      "properties": {
+      "Name":"Lisa Andrin-Mazur",
+      "Address":"6510 Hunter Ct. Phoenix Az 85083",
+      "Email":"nurselisa2009@gmail.com",
+      "Phone":"(623) 293-1198"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.561609,33.772547 ]
+      },
+      "properties": {
+      "Name":"RAMUNDA WRIGHT",
+      "Address":"7441 TWIN HILL WAY, F Austell, Georgia 30168",
+      "Email":"wramunda@gmail.com",
+      "Phone":"(404) 380-0792"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.565664,33.811531 ]
+      },
+      "properties": {
+      "Name":"ToNita Robinson",
+      "Address":"5917 lone oak dr sw Mabelton Ga 30126",
+      "Email":"tonita.labs@gmail.com",
+      "Phone":"(678) 392-0528"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.539042,33.881575 ]
+      },
+      "properties": {
+      "Name":"Patricia Juettner",
+      "Address":"508 Woodsong way Apt 201 symrna GA 30082",
+      "Email":"patriciajuettner@yahoo.com",
+      "Phone":"(813) 842-9666"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.184361,33.958825 ]
+      },
+      "properties": {
+      "Name":"nancy davis",
+      "Address":"263 Megan Lane lexington sc 29073",
+      "Email":"praypray35@aol.com",
+      "Phone":"(803) 479-1480"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.504518,34.056857 ]
+      },
+      "properties": {
+      "Name":"Sandi Foggey",
+      "Address":"1463 Seafoam Ct, Marietta, GA 30066",
+      "Email":"sfoggey@gmail.com",
+      "Phone":"(678) 851-0589"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.559819,34.069555 ]
+      },
+      "properties": {
+      "Name":"Velma Womack",
+      "Address":"2121 Counts Rd",
+      "Email":"bellvelma2012@gmail.com",
+      "Phone":"(1936) 355-6205"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.559819,34.069555 ]
+      },
+      "properties": {
+      "Name":"Velma Womack",
+      "Address":"2121 Counts Rd",
+      "Email":"bellvelma2012@gmail.com",
+      "Phone":"(1936) 355-6205"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.84117,34.35927 ]
+      },
+      "properties": {
+      "Name":"Susan Dickinson",
+      "Address":"8430 N Sherman",
+      "Email":"dickinsonsusan60@yahoo.com",
+      "Phone":"(303) 887-0919"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.489193,34.61647 ]
+      },
+      "properties": {
+      "Name":"Ruth Coleman",
+      "Address":"268 Foster Road; leave at door.",
+      "Email":"ruth.coleman@yahoo.com",
+      "Phone":"(205) 699-4488"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.837929,34.750493 ]
+      },
+      "properties": {
+      "Name":"Jeremy Rathje",
+      "Address":"153 Windy Hill Rd, Central SC 29630",
+      "Email":"jeremy.rathje@icloud.com",
+      "Phone":"(479) 287-3109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.989796,34.801861 ]
+      },
+      "properties": {
+      "Name":"Marilyn Rosado",
+      "Address":"3426 Dalton st",
+      "Email":"rosadomari35@gmail.com",
+      "Phone":"(254) 285-7902"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.96902,34.888237 ]
+      },
+      "properties": {
+      "Name":"TOBIE BRITTON",
+      "Address":"5702 Fair Forest Dr",
+      "Email":"mistellt@yahoo.com",
+      "Phone":"(281) 832-7011"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.056213,35.002794 ]
+      },
+      "properties": {
+      "Name":"Patricia (Patty) Sanders",
+      "Address":"3930 Skipping Stone Dr, Apison, TN 37302",
+      "Email":"sanderspatty97@yahoo.com",
+      "Phone":"(423) 309-6161"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.453714,35.503416 ]
+      },
+      "properties": {
+      "Name":"Tawainna Houston",
+      "Address":"280 Northern Ave, #18-J",
+      "Email":"drtawainnahouston@gmail.com",
+      "Phone":"(404) 493-6414"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.976342,35.581206 ]
+      },
+      "properties": {
+      "Name":"Angie Nelson",
+      "Address":"18072  P .O box ",
+      "Email":"angienel112@outlook.com",
+      "Phone":"(561) 603-6729"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -91.36155,35.843546 ]
+      },
+      "properties": {
+      "Name":"Maranda Sweeting",
+      "Address":"18853 NW 65th Court",
+      "Email":"Sweeting42@gmail.com",
+      "Phone":"(954) 952-4147"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -115.117913,36.112065 ]
+      },
+      "properties": {
+      "Name":"Sheri Lawson",
+      "Address":"2383 Whippoorwill ln Las Vegas, NV 89121",
+      "Email":"sherilawson@me.com",
+      "Phone":"(805) 338-4671"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.914876,36.133712 ]
+      },
+      "properties": {
+      "Name":"Maria Sanchez",
+      "Address":"1101 E TULANE ST",
+      "Email":"mamosanchez22@gmail.com",
+      "Phone":"(1806) 773-1984"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.914876,36.133712 ]
+      },
+      "properties": {
+      "Name":"Maria Sanchez",
+      "Address":"1101 E TULANE ST",
+      "Email":"mamosanchez22@gmail.com",
+      "Phone":"(1806) 773-1984"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.914876,36.133712 ]
+      },
+      "properties": {
+      "Name":"Maria Sanchez",
+      "Address":"1101 E TULANE ST",
+      "Email":"mamosanchez22@gmail.com",
+      "Phone":"(1806) 773-1984"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.85467,36.1662 ]
+      },
+      "properties": {
+      "Name":"Taccara Lee",
+      "Address":"100 Leslie Oaks Dr",
+      "Email":"teelee31405@yahoo.com",
+      "Phone":"(912) 441-0340"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.85467,36.1662 ]
+      },
+      "properties": {
+      "Name":"OLENA KUZMENKO",
+      "Address":"3900 OAKS CLUBHOUSE DR",
+      "Email":"k.lena06@gmail.com",
+      "Phone":"(786) 357-5918"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.94857,36.1854 ]
+      },
+      "properties": {
+      "Name":"Idella Woodard",
+      "Address":"415 America rd Nashville, TN. 37209",
+      "Email":"iwoodard@outlook.com",
+      "Phone":"(615) 596-5371"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -115.084904,36.22192 ]
+      },
+      "properties": {
+      "Name":"Linda Hernandez",
+      "Address":"3610 N Las Vegas Blvd Las Vegas Nv 89115",
+      "Email":"lindaarlenehernandez@gmail.com",
+      "Phone":"(210) 571-2863"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.453504,36.243565 ]
+      },
+      "properties": {
+      "Name":"David Thompson",
+      "Address":"3441 Northwind Dr. Cookeville, TN 38506",
+      "Email":"dmt9494@yahoo.com",
+      "Phone":"(931) 644-9644"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.772247,36.402548 ]
+      },
+      "properties": {
+      "Name":"Debra Megli",
+      "Address":"4022 Ridgetop Dr",
+      "Email":"nurscope@sbcglobal.net",
+      "Phone":"(469) 682-5943"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.772247,36.402548 ]
+      },
+      "properties": {
+      "Name":"Debra Megli",
+      "Address":"4022 Ridgetop Dr",
+      "Email":"nurscope@sbcglobal.net",
+      "Phone":"(469) 682-5943"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -82.289954,36.555171 ]
+      },
+      "properties": {
+      "Name":"Selena Trivette",
+      "Address":"321 Winding Road Bristol, TN 37620",
+      "Email":"tselena321@aol.com",
+      "Phone":"(423) 340-1281"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -99.765785,36.764793 ]
+      },
+      "properties": {
+      "Name":"Stephanie Small",
+      "Address":"172 Laverne Drive",
+      "Email":"Smallstephanie@aol.com",
+      "Phone":"(985) 856-9539"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.502009,36.889774 ]
+      },
+      "properties": {
+      "Name":"Kimberly Hale",
+      "Address":"100 Lee Lane, Hopkinsville KY 42240",
+      "Email":"Halekl1971@gmail.com",
+      "Phone":"(270) 206-2813"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -111.45583,36.91472 ]
+      },
+      "properties": {
+      "Name":"Virginia Gozdecki",
+      "Address":"2153 E Page Mill Dr",
+      "Email":"ginnyjg@aol.com",
+      "Phone":"(520) 873-7955"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.414169,36.947244 ]
+      },
+      "properties": {
+      "Name":"Christina Donohoe",
+      "Address":"936 SHIVE LN LOT 8, Bowling Green,  KY  42103",
+      "Email":"christina.donohoe@ymail.com",
+      "Phone":"(1270) 792-1422"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.38992,37.072658 ]
+      },
+      "properties": {
+      "Name":"Ron Pollard",
+      "Address":"114 Hampton Road Apt. 102",
+      "Email":"ronpollard11@yahoo.com",
+      "Phone":"(727) 423-4110"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.01148,37.081273 ]
+      },
+      "properties": {
+      "Name":"Trina Horn",
+      "Address":"1402 Barlow Ave",
+      "Email":"hornt30@yahoo.com",
+      "Phone":"(214) 289-2494"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.70095,37.14289 ]
+      },
+      "properties": {
+      "Name":"Mary Hawkins",
+      "Address":"6776 Bundy Rd.",
+      "Email":"maryhawk84@gmail.com",
+      "Phone":"(202) 870-4881"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -77.435437,37.207758 ]
+      },
+      "properties": {
+      "Name":"Rebekah Rogers",
+      "Address":"1445 Salem Church Road",
+      "Email":"rarogers27@yahoo.com",
+      "Phone":"(540) 931-6177"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.355384,37.729768 ]
+      },
+      "properties": {
+      "Name":"Sonya Beard",
+      "Address":"121 Tuscany Way Richmond KY 40475",
+      "Email":"sonyarbeden@yahoo.com",
+      "Phone":"(304) 941-7957"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.63276,37.83339 ]
+      },
+      "properties": {
+      "Name":"Liza Copete",
+      "Address":"3260 CLOVERPLACE DR",
+      "Email":"lizalola@hotmail.com",
+      "Phone":"(727) 301-6579"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.958531,37.977586 ]
+      },
+      "properties": {
+      "Name":"Deanna Smith",
+      "Address":"23355 Louisville Nashville Tnpk #E. West Point KY 40177",
+      "Email":"espmom36@msn.com",
+      "Phone":"(502) 648-3615"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.257226,37.989213 ]
+      },
+      "properties": {
+      "Name":"Kathy Scherzinger",
+      "Address":"255 S Pelzer Rd",
+      "Email":"kscherz@live.com",
+      "Phone":"(812) 205-6343"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.412593,37.99263 ]
+      },
+      "properties": {
+      "Name":"Emily Ginter",
+      "Address":"3805 still meadow lane Lexington, ky 40509",
+      "Email":"emilyginter@yahoo.com",
+      "Phone":"(859) 595-7688"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -83.700824,38.084908 ]
+      },
+      "properties": {
+      "Name":"Malinda Donnelly",
+      "Address":"6526 n Olympia Ave",
+      "Email":"malinda@godonnelly.com",
+      "Phone":"(708) 715-2168"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -81.385107,38.210104 ]
+      },
+      "properties": {
+      "Name":"Lisa Flowers",
+      "Address":"1932 w Pratt Blvd #3",
+      "Email":"lbenson1061@gmail.com",
+      "Phone":"(773) 315-6931"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.198806,38.216768 ]
+      },
+      "properties": {
+      "Name":"Erin Goodlett",
+      "Address":"475 Stream View Dr shelbyville Ky 40065",
+      "Email":"erin.goodlett@gmail.com",
+      "Phone":"(502) 232-5021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.703079,38.231247 ]
+      },
+      "properties": {
+      "Name":"Rachel Buttermann",
+      "Address":"2026 Bonnycastle Ave. Louisville KY 40205",
+      "Email":"buttertlc@yahoo.com",
+      "Phone":"(512) 922-3996"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.816383,38.232115 ]
+      },
+      "properties": {
+      "Name":"Alicia Stokes",
+      "Address":"1510 Russell Lee Dr Lou, KY 40211",
+      "Email":"aliweat@aol.com",
+      "Phone":"(1502) 314-1736"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.743445,38.300217 ]
+      },
+      "properties": {
+      "Name":"Frita Pineda",
+      "Address":"12511 Glenna Avenue",
+      "Email":"fritapineda@gmail.com",
+      "Phone":"(336) 987-5439"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.743445,38.300217 ]
+      },
+      "properties": {
+      "Name":"Nicholas Marchione",
+      "Address":"6353 NW 40th Avenue",
+      "Email":"nm@live.com",
+      "Phone":"(954) 857-9621"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.743445,38.300217 ]
+      },
+      "properties": {
+      "Name":"Andriy Paikoush",
+      "Address":"6N909 Roosevelt Avenue",
+      "Email":"paikoush@gmail.com",
+      "Phone":"(630) 485-0516"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.615235,38.459992 ]
+      },
+      "properties": {
+      "Name":"Laura Stethen",
+      "Address":"4750 Charlestown Rd",
+      "Email":"lstethen@yahoo.com",
+      "Phone":"(502) 523-0590"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -107.037294,38.528323 ]
+      },
+      "properties": {
+      "Name":"Barbara Rising",
+      "Address":"19455 E GUNNISON PL",
+      "Email":"bcstewartus@gmail.com",
+      "Phone":"(303) 525-5122"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -122.8041,38.532827 ]
+      },
+      "properties": {
+      "Name":"Tamela Banner",
+      "Address":"1907 Windsor Creek Dr Sw ",
+      "Email":"mrsbanner0629@gmail.com",
+      "Phone":"(313) 399-6095"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -121.381245,38.62367 ]
+      },
+      "properties": {
+      "Name":"Amanda Brown",
+      "Address":"1505 lynn city rd, Sacramento",
+      "Email":"Amanda6brown@gmail.com",
+      "Phone":"(270) 993-7360"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -90.2115,38.747828 ]
+      },
+      "properties": {
+      "Name":"Christopher Oliver",
+      "Address":"8445 QUARTER HORSE DRIVE, RIVERVIEW",
+      "Email":"canes11.co@gmail.com",
+      "Phone":"(727) 643-4495"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -93.49466,38.97168 ]
+      },
+      "properties": {
+      "Name":"Margarette Freeman",
+      "Address":"310 west Emma steet",
+      "Email":"megs149.mf@gmail.com",
+      "Phone":"(848) 992-5991"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -84.641624,38.972008 ]
+      },
+      "properties": {
+      "Name":"Alan Lay",
+      "Address":"28 Windfield Way Florence KY 41042",
+      "Email":"alanlay@fuse.net",
+      "Phone":"(859) 802-3539"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.379572,38.981268 ]
+      },
+      "properties": {
+      "Name":"Brenda Love",
+      "Address":"3622 NE Basswood Drive Lee's Summit, MO  64064",
+      "Email":"brendajlove77@gmail.com",
+      "Phone":"(925) 437-1034"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.669467,39.02315 ]
+      },
+      "properties": {
+      "Name":"Suzanne.           (  Suzy) Fitzpatrick",
+      "Address":"7708w98th st. Overland. Park, KS.",
+      "Email":"suzyfitz@att.net",
+      "Phone":"(913) 908-9834"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -78.753176,39.343981 ]
+      },
+      "properties": {
+      "Name":"Dacy Berry",
+      "Address":"261 N Antigo Pl. Romney, WV 26757",
+      "Email":"jndberry@gmail.com",
+      "Phone":"(304) 919-1536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.592139,39.438964 ]
+      },
+      "properties": {
+      "Name":"Tommy Dubinski",
+      "Address":"22222 Garrison st",
+      "Email":"TOMMYD811@BELLSOUTH.NET",
+      "Phone":"(1954) 675-5855"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.221068,39.49034 ]
+      },
+      "properties": {
+      "Name":"Denise Pittillo",
+      "Address":"11906  Seven 1/2 Street",
+      "Email":"denise62mann@gmail.com",
+      "Phone":"(618) 365-5372"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -94.32106,39.63472 ]
+      },
+      "properties": {
+      "Name":"carolyn lozoya",
+      "Address":"1900 TIERNEY RD.",
+      "Email":"cmooredr2@yahoo.com",
+      "Phone":"(682) 206-8952"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -79.286424,39.647029 ]
+      },
+      "properties": {
+      "Name":"Triver Mondy",
+      "Address":"3644 Binz-Engleman Rd #4305",
+      "Email":"tmondy59@gmail.com",
+      "Phone":"(210) 457-9236"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.30309,39.6533 ]
+      },
+      "properties": {
+      "Name":"John Tsangaris",
+      "Address":"4372 67th Ave N",
+      "Email":"jrtsangaris@hotmail.com",
+      "Phone":"(727) 520-2626"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.371332,39.657355 ]
+      },
+      "properties": {
+      "Name":"Greg Schaffer",
+      "Address":"373 GLOUCESTER STREET",
+      "Email":"jgschaffer@gmail.com",
+      "Phone":"(727) 373-9933"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.70454,39.67616 ]
+      },
+      "properties": {
+      "Name":"Kelsey Carbary",
+      "Address":"109 Chatham Square",
+      "Email":"kgcarbary@yahoo.com",
+      "Phone":"(512) 591-1365"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.403457,39.764395 ]
+      },
+      "properties": {
+      "Name":"Debra Rickerd",
+      "Address":"177 Avon Ave",
+      "Email":"newdar2@aol.com",
+      "Phone":"(859) 321-5999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.95119,39.93254 ]
+      },
+      "properties": {
+      "Name":"Roxanne Hernandez",
+      "Address":"628 Forsythe Ave ",
+      "Email":"rsandoval628@gmail.com",
+      "Phone":"(312) 662-2872"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.185858,40.067666 ]
+      },
+      "properties": {
+      "Name":"Billie Hendry",
+      "Address":"7178 Four Rivers Rd,  Boulder, CO  80301",
+      "Email":"behendry@gmail.com",
+      "Phone":"(303) 530-0251"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -79.357478,40.177147 ]
+      },
+      "properties": {
+      "Name":"Angela Allen",
+      "Address":"1067 NW 33rd Manor",
+      "Email":"angtayall@aol.com",
+      "Phone":"(954) 479-9581"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -78.87086,40.36118 ]
+      },
+      "properties": {
+      "Name":"Marielle Teliphat",
+      "Address":"1012 parkhill dr",
+      "Email":"mariellerhodes@gmail.com",
+      "Phone":"(786) 281-7386"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.807764,40.411356 ]
+      },
+      "properties": {
+      "Name":"Maggie Passement",
+      "Address":"301 Gallop Drive, Lafayette, IN 47905",
+      "Email":"mjruemler@gmail.com",
+      "Phone":"(317) 508-8894"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -86.766044,40.420015 ]
+      },
+      "properties": {
+      "Name":"E'Lisha Valentine",
+      "Address":"4512 N Elston Ave #2",
+      "Email":"elishavalentine2003@yahoo.com",
+      "Phone":"(773) 939-2312"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -77.927224,40.65951 ]
+      },
+      "properties": {
+      "Name":"Lisa Vannata",
+      "Address":"5641 Mossberg Drive",
+      "Email":"LVANNATA64@VERIZON.NET",
+      "Phone":"(727) 505-3864"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -110.644785,41.015672 ]
+      },
+      "properties": {
+      "Name":"Morgan Gonzalez",
+      "Address":"12101 Wasatch Court",
+      "Email":"morgan.rose.gonzalez@gmail.com",
+      "Phone":"(813) 601-3102"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.273306,41.021992 ]
+      },
+      "properties": {
+      "Name":"Elizabeth Licon",
+      "Address":"8322 Forest Ridge Dr",
+      "Email":"elizabeth.licon@ymail.com",
+      "Phone":"(210) 396-0872"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -93.775845,41.029937 ]
+      },
+      "properties": {
+      "Name":"Nicole locher",
+      "Address":"103 s Osceola st",
+      "Email":"nicole.sode@gmail.com",
+      "Phone":"(1815) 630-6797"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.864391,41.09404 ]
+      },
+      "properties": {
+      "Name":"Patrician Gamble",
+      "Address":"3013 TOULON DR APT C",
+      "Email":"maurisha158@yahoo.com",
+      "Phone":"(251) 623-2385"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.08332,41.30582 ]
+      },
+      "properties": {
+      "Name":"Sarah Flores",
+      "Address":"6024 Mary Lewis Dr",
+      "Email":"scflores.2014@gmail.com",
+      "Phone":"(512) 573-4841"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -95.08332,41.30582 ]
+      },
+      "properties": {
+      "Name":"Sarah Flores",
+      "Address":"6024 Mary Lewis Dr",
+      "Email":"scflores.2014@gmail.com",
+      "Phone":"(512) 573-4841"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -72.746667,41.579778 ]
+      },
+      "properties": {
+      "Name":"Jonathan Alfaro",
+      "Address":"12415 S 68th Ct",
+      "Email":"jsalfaro935@gmail.com",
+      "Phone":"(708) 935-0955"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.735725,41.624109 ]
+      },
+      "properties": {
+      "Name":"Priscilla Barragan",
+      "Address":"14730 ketelaar dr apt 3w Midlothian, Il. 60445",
+      "Email":"pbarragan0118@yahoo.com",
+      "Phone":"(708) 646-5630"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -122.52601,41.64058 ]
+      },
+      "properties": {
+      "Name":"Dawn Mencarini",
+      "Address":"1280 GRENADA AVE",
+      "Email":"dmencari@tampabay.rr.com",
+      "Phone":"(727) 410-3776"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -121.973887,41.919428 ]
+      },
+      "properties": {
+      "Name":"Cassondra Brown",
+      "Address":"2259 Doris Drive",
+      "Email":"Cass1423@yahoo.com",
+      "Phone":"(1770) 866-1334"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.839192,41.963219 ]
+      },
+      "properties": {
+      "Name":"Irene Stasula",
+      "Address":"8458 w Windsor Chicago, il 60656",
+      "Email":"istasula@uic.edu",
+      "Phone":"(1773) 320-1735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.727075,42.01426 ]
+      },
+      "properties": {
+      "Name":"Yonia Yonan",
+      "Address":"3915 W Sherwin Ave lincolnwood IL 60712",
+      "Email":"yoniahgn@yahoo.com",
+      "Phone":"(847) 527-7584"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.739428,42.024306 ]
+      },
+      "properties": {
+      "Name":"Arvind Datt",
+      "Address":"4435 Kirk St. Skokie, IL. 60076",
+      "Email":"adatt71@yahoo.com",
+      "Phone":"(217) 379-1419"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -80.038075,42.060034 ]
+      },
+      "properties": {
+      "Name":"Irene Gonzalez",
+      "Address":"3067 Charter Oaks Dr.Houston,Tx.77093",
+      "Email":"ahcp2010@gmail.com",
+      "Phone":"(832) 552-2961"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.293609,42.15877 ]
+      },
+      "properties": {
+      "Name":"Erin Rednour",
+      "Address":"710 Oceola Dr., Algonquin IL 60102",
+      "Email":"ejred9@gmail.com",
+      "Phone":"(217) 370-2383"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.072594,42.231578 ]
+      },
+      "properties": {
+      "Name":"Mary Kaye Graham",
+      "Address":"2929 11th st,  Rockford, IL 61109",
+      "Email":"mkgogetter@yahoo.com",
+      "Phone":"(815) 708-9361"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -83.240701,42.341328 ]
+      },
+      "properties": {
+      "Name":"Mikeisha Richardson",
+      "Address":"6891 Country Ln Dearborn Heights, MI 48127",
+      "Email":"mn_rich@yahoo.com",
+      "Phone":"(989) 714-1578"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.886626,42.342018 ]
+      },
+      "properties": {
+      "Name":"Anita Simms",
+      "Address":"5952 Wedgewood cv",
+      "Email":"chinaj70@gmail.com",
+      "Phone":"(901) 246-2313"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.903755,42.372705 ]
+      },
+      "properties": {
+      "Name":"Fatima Khan",
+      "Address":"4061 Grandview Ave Gurnee Il 60031",
+      "Email":"fkhan031980@yahoo.com",
+      "Phone":"(773) 510-5146"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -73.228483,42.3929 ]
+      },
+      "properties": {
+      "Name":"Yolanda Lopez",
+      "Address":"7402 Springfield Ave Apt 1202",
+      "Email":"yolanda115907@gmail.com",
+      "Phone":"(956) 319-0959"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -70.975882,42.459426 ]
+      },
+      "properties": {
+      "Name":"Alicia Barrera",
+      "Address":"6903 border brook apt 1905",
+      "Email":"abarrera0770@gmail.com",
+      "Phone":"(956) 434-9024"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -70.780576,42.62781 ]
+      },
+      "properties": {
+      "Name":"pamela richardson",
+      "Address":"2632 Essex Court",
+      "Email":"msp4ubellville@aol.com",
+      "Phone":"(989) 714-4023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.009597,42.887289 ]
+      },
+      "properties": {
+      "Name":"Nickesha Bartley",
+      "Address":"3828 Ferncliff rd",
+      "Email":"nicmolizio2@gmail.com",
+      "Phone":"(404) 254-9910"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.851428,42.8986 ]
+      },
+      "properties": {
+      "Name":"Kelly Johnson",
+      "Address":"3333 5th Ave Unit 3D South Milwaukee, WI 53172",
+      "Email":"Summersgirl625@yahoo.com",
+      "Phone":"(414) 388-7362"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.980317,42.969887 ]
+      },
+      "properties": {
+      "Name":"Mai Chou Yang",
+      "Address":"5226 W Plainfield Ave, Milwaukee WI 53220",
+      "Email":"maichouyang89@gmail.com",
+      "Phone":"(414) 334-7030"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.759793,42.993502 ]
+      },
+      "properties": {
+      "Name":"MARIA UNES",
+      "Address":"680 JEFFERSON ST",
+      "Email":"mariagabby34@gmail.com",
+      "Phone":"(504) 451-9489"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.070668,43.069 ]
+      },
+      "properties": {
+      "Name":"Reeyana Cha",
+      "Address":"2760 Princeton Rd Brookfield, WI 53005",
+      "Email":"reeyana.c@gmail.com",
+      "Phone":"(262) 751-4936"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -112.342102,43.188257 ]
+      },
+      "properties": {
+      "Name":"Craig Canady",
+      "Address":"224 1/2 North Shilling Ave, Blackfoot, ID 83221",
+      "Email":"pantherajourneys@gmail.com",
+      "Phone":"(520) 987-0425"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -87.984755,43.19165 ]
+      },
+      "properties": {
+      "Name":"Pa Xiong",
+      "Address":"9545 N 60th Street, Brown Deer, WI 53223",
+      "Email":"xiongpa@mtmary.edu",
+      "Phone":"(414) 530-5573"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -76.11029,43.621562 ]
+      },
+      "properties": {
+      "Name":"MICHELLE CABEZAS",
+      "Address":"14827 Sandy Creek Drive",
+      "Email":"michellecabezas73@gmail.com",
+      "Phone":"(409) 256-4227"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -92.599372,43.988227 ]
+      },
+      "properties": {
+      "Name":"Tywanda Cannon",
+      "Address":"5530 Brown Road",
+      "Email":"tywandacannon47@gmail.com",
+      "Phone":"(1225) 244-5383"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.433697,44.225098 ]
+      },
+      "properties": {
+      "Name":"See Lee",
+      "Address":"1298 Mayer Street Menasha WI 54952",
+      "Email":"see.examswi@gmail.com",
+      "Phone":"(920) 378-6806"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -88.090613,44.430916 ]
+      },
+      "properties": {
+      "Name":"Sara Sheldon",
+      "Address":"1168 C Scheuring Rd. De Pere, WI 54115",
+      "Email":"sarasheldon9@gmail.com",
+      "Phone":"(920) 562-1534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.813768,44.860517 ]
+      },
+      "properties": {
+      "Name":"LISA LONGORIA",
+      "Address":"7721 CEDRO DR",
+      "Email":"llongoria.ht@outlook.com",
+      "Phone":"(361) 442-6780"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -85.813768,44.860517 ]
+      },
+      "properties": {
+      "Name":"LISA LONGORIA",
+      "Address":"7721 CEDRO DR",
+      "Email":"llongoria.ht@outlook.com",
+      "Phone":"(361) 442-6780"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.642342,44.971755 ]
+      },
+      "properties": {
+      "Name":"Kori Auner",
+      "Address":"711 N 6th Ave, Wausau WI",
+      "Email":"kaunerlpn@hotmail.com",
+      "Phone":"(715) 212-1994"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -89.713291,45.217518 ]
+      },
+      "properties": {
+      "Name":"Tammy Strehlow",
+      "Address":"N2396 Doering Dr Merrill WI 54452",
+      "Email":"tammystrehlow@gmail.com",
+      "Phone":"(715) 657-0259"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -91.014362,45.832746 ]
+      },
+      "properties": {
+      "Name":"Sabrina Burnett",
+      "Address":"3200 old winter rd apt 2314",
+      "Email":"sabrinaburnett193@gmail.com",
+      "Phone":"(321) 442-4571"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -96.834703,46.927094 ]
+      },
+      "properties": {
+      "Name":"Lisa Reyes",
+      "Address":"7405 Fargo Drive",
+      "Email":"l-d-reyes@hotmail.com",
+      "Phone":"(361) 228-3591"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -114.1716,47.4427 ]
+      },
+      "properties": {
+      "Name":"Arijana ford",
+      "Address":"707 cheryl ann dr",
+      "Email":"arifordmt@gmail.com",
+      "Phone":"(314) 299-3892"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"Valerie Pierre",
+      "Address":"8330 North Missionwood Circle Unit B-23",
+      "Email":"vpierre32@gmail.com",
+      "Phone":"(954) 541-4496"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"Tina Plahuta",
+      "Address":"10223 Riverstone Circle",
+      "Email":"tharrison821@hotmail.com",
+      "Phone":"(502) 851-6131"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"Jean Marino",
+      "Address":"8350 Savannah Trace Circle #1707",
+      "Email":"buggie12366@gmail.com",
+      "Phone":"(813) 846-4439"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"Vanessa Cole",
+      "Address":"1670 village place circle",
+      "Email":"Vanlyn331@hotmail.com",
+      "Phone":"(678) 933-5602"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"Laurie Clark",
+      "Address":"343 Westford Circle",
+      "Email":"Lclark01@knology.net",
+      "Phone":"(727) 773-7650"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"David Daniel Palmares Villarreal",
+      "Address":"1651 Sunblossom Circle",
+      "Email":"DAVID.PALMARES@HOTMAIL.COM",
+      "Phone":"(830) 302-8603"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -105.758852,47.484243 ]
+      },
+      "properties": {
+      "Name":"Jason Sutton",
+      "Address":"12813 Saddle Club Circle",
+      "Email":"Jsems79@gmail.com",
+      "Phone":"(501) 551-6139"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ -97.001169,48.845261 ]
+      },
+      "properties": {
+      "Name":"Ashley Crawford",
+      "Address":"2801 Northcote Dr",
+      "Email":"ashleyyr1197@gmail.com",
+      "Phone":"(727) 412-4045"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ 0,0 ]
+      },
+      "properties": {
+      "Name":"Elaine Rosaci",
+      "Address":"717 isar Ave nw",
+      "Email":"erosaci@hotmail.com",
+      "Phone":"(407) 417-3292"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ 0,0 ]
+      },
+      "properties": {
+      "Name":"HEATHER BURCH-WICKER",
+      "Address":"2004 Ga Highway 315",
+      "Email":"Hburch3004@charter.net",
+      "Phone":"(706) 464-7474"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+         "type": "Point",
+         "coordinates":  [ 0,0 ]
+      },
+      "properties": {
+      "Name":"Jessica Belekevich",
+      "Address":"2522 Oyster Catcher Ct apt 101 ",
+      "Email":"belekevichj@aol.com",
+      "Phone":"(813) 367-6706"
+      }
+    }
+  ]
+  }
+
+  map.on('load', function(e) {
+    // Add the data to your map as a layer
+    map.addLayer({
+      id: 'locations',
+      type: 'symbol',
+      // Add a GeoJSON source containing place coordinates and information.
+      source: {
+        type: 'geojson',
+        data: stores
+      },
+      layout: {
+        'icon-image': 'marker-15',
+        'icon-allow-overlap': false,
+              }
+    });
+  buildLocationList(stores);
+  var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    bbox: [-171.791110603, 18.91619, -66.96466, 71.3577635769]
+  });
+  map.addControl(geocoder, 'top-left');
+  map.addSource('single-point', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: [] // Notice that initially there are no features
+    }
+  });
+  map.addLayer({
+    id: 'point',
+    source: 'single-point',
+    type: 'symbol',
+    layout: {
+      'icon-image': 'embassy-15',
+      'icon-allow-overlap': true,
+    }
+  });
+  map.addControl(new MapboxDirections({
+  accessToken: mapboxgl.accessToken
+  }), 'top-right');
+  geocoder.on('result', function(ev) {
+    var searchResult = ev.result.geometry;
+    map.getSource('single-point').setData(searchResult);
+
+    var options = { units: 'miles' };
+  stores.features.forEach(function(store) {
+    Object.defineProperty(store.properties, 'distance', {
+      value: turf.distance(searchResult, store.geometry, options),
+      writable: true,
+      enumerable: true,
+      configurable: true
+    });
+  });
+  stores.features.sort(function(a,b){
+    if (a.properties.distance > b.properties.distance) {
+      return 1;
+    }
+    if (a.properties.distance < b.properties.distance) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  var listings = document.getElementById('listings');
+  while (listings.firstChild) {
+    listings.removeChild(listings.firstChild);
+  }
+  buildLocationList(stores);
+  function sortLonLat(storeIdentifier) {
+    var lats = [stores.features[storeIdentifier].geometry.coordinates[1], searchResult.coordinates[1]]
+    var lons = [stores.features[storeIdentifier].geometry.coordinates[0], searchResult.coordinates[0]]
+
+    var sortedLons = lons.sort(function(a,b){
+        if (a > b) { return 1; }
+        if (a.distance < b.distance) { return -1; }
+        return 0;
+      });
+    var sortedLats = lats.sort(function(a,b){
+        if (a > b) { return 1; }
+        if (a.distance < b.distance) { return -1; }
+        return 0;
+      });
+
+    map.fitBounds([
+      [sortedLons[0], sortedLats[0]],
+      [sortedLons[1], sortedLats[1]]
+    ], {
+      padding: 100
+      });
+  };
+  sortLonLat(0);
+  createPopUp(stores.features[0]);
+    });
+    });
+  function buildLocationList(data) {
+    // Iterate through the list of stores
+    for (i = 0; i < data.features.length; i++) {
+      var currentFeature = data.features[i];
+      // Shorten data.feature.properties to just `prop` so we're not
+      // writing this long form over and over again.
+      var prop = currentFeature.properties;
+      // Select the listing container in the HTML and append a div
+      // with the class 'item' for each store
+      var listings = document.getElementById('listings');
+      var listing = listings.appendChild(document.createElement('div'));
+      listing.className = 'item';
+      listing.id = 'listing-' + i;
+
+      // Create a new link with the class 'title' for each store
+      // and fill it with the store address
+      var link = listing.appendChild(document.createElement('a'));
+      link.href = '#';
+      link.className = 'title';
+      link.dataPosition = i;
+      link.innerHTML = prop.Name;
+
+      // Create a new div with the class 'details' for each store
+      // and fill it with the city and phone number
+      var details = listing.appendChild(document.createElement('div'));
+      details.innerHTML = prop.Email;
+      if (prop.Phone) {
+        details.innerHTML += ' · ' + prop.Phone;
+      }
+      if (prop.Address) {
+        details.innerHTML += ' · ' + prop.Address;
+      }
+      if (prop.distance) {
+      var roundedDistance = Math.round(prop.distance * 100) / 100;
+      details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>';
+    }}};
+      function flyToStore(currentFeature) {
+        map.flyTo({
+          center: currentFeature.geometry.coordinates,
+
+        });
+      }
+      function createPopUp(currentFeature) {
+        var popUps = document.getElementsByClassName('mapboxgl-popup');
+        // Check if there is already a popup on the map and if so, remove it
+        if (popUps[0]) popUps[0].remove();
+
+        var popup = new mapboxgl.Popup({ closeOnClick: false })
+          .setLngLat(currentFeature.geometry.coordinates)
+          .setHTML('<h3>Technician</h3>' +
+            '<h4>' + currentFeature.properties.Name + '</h4>' + '<br><h4>' + currentFeature.properties.Email + '</h4>' + '<br><h4>' + currentFeature.properties.Phone + '</h4>')
+          .addTo(map);
+      };
+      // Add an event listener for when a user clicks on the map
+  map.on('click', function(e) {
+    // Query all the rendered points in the view
+    var features = map.queryRenderedFeatures(e.point, { layers: ['locations'] });
+    if (features.length) {
+      var clickedPoint = features[0];
+      // 1. Fly to the point
+      flyToStore(clickedPoint);
+      // 2. Close all other popups and display popup for clicked store
+      createPopUp(clickedPoint);
+      // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+      var activeItem = document.getElementsByClassName('active');
+      if (activeItem[0]) {
+        activeItem[0].classList.remove('active');
+      }
+      // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
+      var selectedFeature = clickedPoint.properties.address;
+
+      for (var i = 0; i < stores.features.length; i++) {
+        if (stores.features[i].properties.address === selectedFeature) {
+          selectedFeatureIndex = i;
+        }
+      }
+      // Select the correct list item using the found index and add the active class
+      var listing = document.getElementById('listing-' + selectedFeatureIndex);
+      listing.classList.add('active');
+    }
+  });
+      </script>
+
+  </body>
+</html>

@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="src/script.js"></script>
+    <link rel='stylesheet' href='src/fullcalendar-3.10.0/fullcalendar.css' />
+    <script src='src/fullcalendar-3.10.0/lib/jquery.min.js'></script>
+    <script src='src/fullcalendar-3.10.0/lib/moment.min.js'></script>
+    <script src='src/fullcalendar-3.10.0/fullcalendar.js'></script>
+    <script type='text/javascript' src='src/fullcalendar-3.10.0/gcal.js'></script>
     <title></title>
-  </head>
+   </head>
   <body>
     <header>
       <img class="Logo" src="img/New Logo Full.png" alt="Logo">
@@ -18,15 +23,20 @@
         <a class ="active"  href="event.html">Events</a>
       <a href="technician.html">Technician</a>
       </div>
-    <div class="row">
-      <div class="column">
-        <h1 class="create">Create Event</h1>
-        <p><a href="create_event.html"><button class="w3-btn w3-red w3-round-large"><i class="w3-margin-center material-icons w3-xxxlarge">create</i></button></a></p>
-        </div>
-      <div class="column2">
-      <h1 class="create">View Events</h1>
-      <p><a href="calendar.html"><button  class="w3-btn w3-red w3-round-large"><i class="w3-margin-center material-icons w3-xxxlarge">event</i></button></a></p>
-      </div>
-    </div>
+
+<div id='calendar'></div>
+
+
+  <script type="text/javascript">
+  $(function() {
+
+// page is now ready, initialize the calendar...
+
+$('#calendar').fullCalendar({
+  // put your options and callbacks here
+})
+
+});
+  </script>
   </body>
 </html>
