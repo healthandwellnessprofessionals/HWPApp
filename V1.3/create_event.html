@@ -46,10 +46,12 @@
 </div>
 
 <div class="tab">Services
-  <label class="container"><p>Biometric<br><input type="checkbox" oninput="this.className =''" name-"bio"><span class="checkmark"></span></p></label>
-  <label class="container"><p>Nicotine<br><input type="checkbox" oninput="this.className = ''" name="nic"><span class="checkmark"></span></p></label>
-  <label class="container"><p>Flu<br><input type="checkbox" oninput="this.className= ''" name="flu"><span class="checkmark"></span></p></label>
-  <p><input type="textarea" placeholder="Other" oninput="this.classNane =''" name="other"></p>
+  <br><br>Biometric<br><label class="switch"><input type="checkbox" oninput="this.className =''" name-"bio"><span class="slider"></span></label>
+  <br><br>Nicotine Employee Paid<br><label class="switch"><p><input type="checkbox" id="nic" oninput="this.className = ''" name="nic"><span class="slider" onclick="showHideNicPayment()"></span></p></label>
+  <br><br>Nicotine Company Paid<br><label class="switch"><p><input type="checkbox" id="nic" oninput="this.className = ''" name="nic"><span class="slider" onclick="showHideNicPayment()"></span></p></label>
+  <br><br>Flu<br><label class="switch"><p><input type="checkbox" oninput="this.className= ''" name="flu"><span class="slider"></span></p></label>
+  <br><br>PSA<br><label class="switch"><p><input type="checkbox" oninput="this.className= ''" name="psa"><span class="slider"></span></p></label>
+  <br><p><input type="textarea" placeholder="Other" oninput="this.classNane =''" name="other"></p>
 </div>
 
 <div class="tab">Technician
@@ -152,7 +154,11 @@ for (i = 0; i < x.length; i++) {
 }
 //... and adds the "active" class on the current step:
 x[n].className += " active";
+};
+function showHideNicPayment(){
+  var checkbox
 }
+
 </script>
 
   </body>
