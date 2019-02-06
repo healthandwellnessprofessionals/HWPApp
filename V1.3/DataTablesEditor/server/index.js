@@ -1,4 +1,4 @@
-let controller = require( './table.Technician.js' );
+let controller = require( './table.Events.js' );
 let bodyParser = require( 'body-parser' );
 let express = require( 'express' );
 let bb = require( 'express-busboy' );
@@ -41,7 +41,7 @@ app.use( function( req, res ) {
 
 // Listening
 app.listen( 8082, '0.0.0.0', function () {
-    console.log( 'DataTables Editor demo created by Generator - navigate to http://localhost:8082/Technician.html' );
+    console.log( 'DataTables Editor demo created by Generator - navigate to http://localhost:8082/Events.html' );
 } );
 
 

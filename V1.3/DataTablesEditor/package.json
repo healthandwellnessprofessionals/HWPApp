@@ -1,0 +1,28 @@
+{
+	"name": "datatables.net-editor-generator",
+	"version": "0.0.1",
+	"description": "DataTables Editor Generator created package",
+	"main": "server/index.js",
+	"private": true,
+	"dependencies": {
+		"body-parser": "^1.17.2",
+		"datatables.net-editor-server": ">=1.7.0",
+		"express": "^4.15.3",
+		"express-busboy": "^6.0.1",
+		"knex": "^0.13.0",
+		"mysql": "^2.13.0"
+	},
+	"devDependencies": {
+		"source-map-support": "^0.4.15"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server/index.js"
+	},
+	"keywords": [
+		"DataTables",
+		"Editor"
+	],
+	"author": "SpryMedia Limited",
+	"license": "SEE LICENSE IN https://editor.datatables.net/license"
+}
