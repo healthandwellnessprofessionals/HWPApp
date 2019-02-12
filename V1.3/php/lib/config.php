@@ -13,11 +13,11 @@ ini_set('display_errors', '1');
  * Edit the following with your database connection options
  */
 $sql_details = array(
-	"type" => "MariaDB",
-	"user" => "MsteeleHWP",
-	"pass" => "Masman41!",
-	"host" => "hwptest.c1raxng8smig.us-east-1.rds.amazonaws.com",
+	"type" => "Mysql",
+	"user" => "admin",
+	"pass" => "P#wk9iqri#Es4MXw",
+	"host" => "contractortechniciandbtest.cysm4sggbuiz.us-east-1.rds.amazonaws.com",
 	"port" => "3306",
-	"db"   => "hwptest",
+	"db"   => "nursecontractordb",
 	"dsn"  => "charset=utf8"
 );
